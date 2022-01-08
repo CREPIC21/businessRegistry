@@ -1,0 +1,39 @@
+<%- include('partials/header'); -%>
+
+<% if (user) { %>
+  <a href="/logout">Logout</a>
+  <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+<%} else { %>
+  <a href="/login">Login</a>
+  <a href="/cart" class="cart-btn-disable"><i class="fas fa-shopping-cart"></i></a>
+<% } %>
+</header>
+
+<div class="form-image"></div>
+
+<div>
+<form action="/contact" method="POST" class="form-container" id="contact-form" autocomplete="off">
+  <% Object.values(errors).forEach(function(value){ %>
+  <% if (value.includes('not')) { %>
+  <h1 style="color: red; padding-bottom: 10px; font-size: 1.3rem; margin-bottom: 0.4rem; text-align: center;"><%= errors %></h1>
+  <%} else { %>
+  <h1 style="color: green; padding-bottom: 10px; font-size: 1.3rem; margin-bottom: 0.4rem; text-align: center;"><%= errors %></h1>
+  <% } %>
+  <% }); %>
+  <div class="grid-item-form">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" autocomplete="nope" value="" required><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" autocomplete="nada" value="" required><br>
+    <label for="email">Your email:</label><br>
+    <input type="email" id="email" name="email" autocomplete="email" value="" required><br><br>
+    <label for="message">Your message:</label><br>
+    <textarea form="contact-form" name="message" id="message" autocomplete="off" rows="7" cols="30" required></textarea>
+    <input type="submit" value="Send Message" class="input-submit-btn">
+    </div>    
+  </form>
+</div>
+
+
+
+<%- include('partials/footer'); -%>

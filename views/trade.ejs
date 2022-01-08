@@ -1,0 +1,62 @@
+<%- include('partials/header'); -%>
+
+<% if (user) { %>
+    <a href="/logout">Logout</a>
+    <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+<%} else { %>
+    <a href="/login">Login</a>
+<% } %>
+</header>
+
+    <div class="trade-image">
+        <!-- <img src="uploads/contact-large.jpg" class="" alt=""> -->
+    </div>
+    <div class="trade-info-section">
+    <h2> <%= tradeToRender.name %> - <%= tradeToRender.businessType %></h2>
+    <p> <%= tradeToRender.description %> </p>
+    <p> Website: <%= tradeToRender.website %> </p>
+    <p> Email: <%= tradeToRender.email %> </p>
+    <p> Phone: <%= tradeToRender.phone %> </p>
+
+
+    <% if(tradeToRender.averageRating < 2 || tradeToRender.averageRating == 2) { %>
+        <p> Rating: <%= tradeToRender.averageRating %> ⭐</p>
+    <%} else if (tradeToRender.averageRating < 4 || tradeToRender.averageRating == 4) { %>
+        <p> Rating: <%= tradeToRender.averageRating %> ⭐⭐</p>
+    <%} else if (tradeToRender.averageRating < 6 || tradeToRender.averageRating == 6) { %>
+        <p> Rating: <%= tradeToRender.averageRating %> ⭐⭐⭐</p>
+    <%} else if (tradeToRender.averageRating < 8 || tradeToRender.averageRating == 8) { %>
+        <p> Rating: <%= tradeToRender.averageRating %> ⭐⭐⭐⭐</p>
+    <%} else if (tradeToRender.averageRating < 10 || tradeToRender.averageRating == 10) { %>
+        <p> Rating: <%= tradeToRender.averageRating %> ⭐⭐⭐⭐⭐</p>
+    <%} else { %>
+        <p> Rating: 0 <%= tradeToRender.averageRating %> </p>
+    <% } %>
+    </div>
+    <% reviewToRender.forEach(function(review){ %>
+        <div class="trade-review">
+            <h2 class="trade-review-title"> <%= review.title %></h2>
+            <p class="trade-review-text"> <%= review.text %> </p>
+            <p class="trade-review-author"> Posted by: <%= review.author %> </p>
+        </div>
+    <% }); %>
+
+    <% if (!alreadyCommented) { %>
+    <div>
+        <form action="/comment" method="POST" id="comment-form" class="comment-form-container">
+            <label for="title">Comment title</label>
+            <input type="text" id="title" name="title" class="comment-form-container-item" required><br>
+            <label for="text">Write your comment</label>
+            <textarea class="new-comment-textarea comment-form-container-item" form="comment-form" name="text" id="text" name="text" rows="3" cols="35" required></textarea>
+            
+            <div class="comment-rating-div">
+            <label for="rating">Comment Rating (1 to 10): </label>
+            <input type="number" id="rating" name="rating" class="comment-rating-input" min="1" max="10" required>
+            </div>
+
+            <input type="submit" value="Post Your Comment" class="new-comment-btn">
+        </form>
+    </div>
+    <% } %>
+
+<%- include('partials/footer'); -%>

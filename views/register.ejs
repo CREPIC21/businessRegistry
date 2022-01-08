@@ -1,0 +1,36 @@
+<%- include('partials/header'); -%>
+
+<% if (user) { %>
+  <a href="/logout">Logout</a>
+  <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+</header>
+<%} else { %>
+  <a href="/login">Login</a>
+  <a href="/cart" class="cart-btn-disable"><i class="fas fa-shopping-cart"></i></a>
+</header>
+<div class="register-image"></div>
+
+<div>
+
+<form action='/register' method="POST" class="form-container" autocomplete="off">
+  <div class="grid-item-form">
+    <% Object.values(errors).forEach(function(value){ %>
+      <% if (value.includes('not')) { %>
+      <h1 style="color: red; padding-bottom: 10px; font-size: 1.3rem; margin-bottom: 0.4rem; text-align: center;"><%= errors %></h1>
+      <%} else { %>
+      <h1 style="color: green; padding-bottom: 10px; font-size: 1.3rem; margin-bottom: 0.4rem; text-align: center;"><%= errors %></h1>
+      <% } %>
+      <% }); %>
+    <label for="fullname">Full name:</label><br>
+    <input type="text" id="fullname" name="fullname" autocomplete="nope" value="" required><br>
+    <label for="email">Enter your email</label><br>
+    <input type="email" id="email" name="email" autocomplete="email" value="" required><br>
+    <label for="pwd">Password:</label><br>
+    <input type="password" id="pwd" name="pwd" minlength="9" required><br><br>
+    <input type="submit" value="Register" class="input-submit-btn">
+  </div>
+  </form>
+  </div>
+<% } %>
+
+<%- include('partials/footer'); -%>

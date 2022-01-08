@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Place your kit's code here -->
+     <script src="https://kit.fontawesome.com/0d47fb2970.js" crossorigin="anonymous"></script>
+    <title>Business Registry</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <header class="grid-container-header"></header>
+
+  <div class="login-image"></div>
+
+  
+
+  <div>
+    <form action='/auth/<%= userToken %>' method="POST" class="form-container">
+      <div class="grid-item-form">
+        <h1 style="color:red; padding-bottom: 10px; font-size: 1rem; margin-bottom: 0.4rem;"><%= errors %></h1>
+        <h3 style="margin-bottom: 1rem;">Thank you for registering. Log In with your credentials.</h3>
+        <label for="email">Enter your email</label><br>
+        <input type="email" id="email" name="email" value="" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" value="" required><br><br>
+        <input type="submit" value="Log In" class="input-submit-btn">
+      </div>
+      </form>
+      </div>
+
+  
+
+<%- include('partials/footer'); -%>

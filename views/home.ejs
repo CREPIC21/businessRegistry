@@ -1,0 +1,123 @@
+<%- include('partials/header'); -%>
+
+<% if (user) { %>
+    <a href="/logout">Logout</a>
+    <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+<%} else { %>
+    <a href="/login">Login</a>
+    <a href="/cart" class="cart-btn-disable"><i class="fas fa-shopping-cart"></i></a>
+<% } %>
+</header>
+
+<% if (user) { %>
+
+<section class="grid-container-section">
+    <% allTrades.forEach(function(trade){ %>
+            <div class="grid-item">
+
+                <div class="grid-item-child">
+                    <h3><%= trade.name %></h3>
+                    <p><%= trade.description %></p>
+                    <a href="/trade/<%= trade._id %>">See Info</a>
+                    <a href="/trade/<%= trade._id %>/proffesions">See proffesions</a>
+                    <!-- <a href="https://www.facebook.com/login/" class="social-icons"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/accounts/login/" class="social-icons"><i class="fab fa-instagram-square"></i></a>
+                    <a href="https://www.linkedin.com/login" class="social-icons"><i class="fab fa-linkedin"></i></a> -->
+                </div>
+                <div class="grid-item-child-img">
+                    <img src="/uploads/picture_<%= trade._id %>.jpg">
+                </div>
+
+            </div>
+    <% }); %>
+</section>
+
+<%} else { %>
+
+    <section class="grid-container-section">
+                <div class="grid-item">
+                    <div class="grid-item-child">
+                        <h3><%= allTrades[0].name %></h3>
+                        <p><%= allTrades[0].description %></p>
+                        <a style="pointer-events: none">See Info</a>
+                        <a style="pointer-events: none">See proffesions</a>
+                    </div>
+                    <div class="grid-item-child-img">
+                        <img src="/uploads/picture_<%= allTrades[0]._id %>.jpg">
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <div class="grid-item-child">
+                        <h3><%= allTrades[1].name %></h3>
+                        <p><%= allTrades[1].description %></p>
+                        <a style="pointer-events: none">See Info</a>
+                        <a style="pointer-events: none">See proffesions</a>
+                    </div>
+                    <div class="grid-item-child-img">
+                        <img src="/uploads/picture_<%= allTrades[1]._id %>.jpg">
+                    </div>
+                </div>
+
+                <div class="grid-item" style="opacity: 0.6;">
+                    <div class="grid-item-child">
+                        <h3><%= allTrades[2].name %></h3>
+                        <p><%= allTrades[2].description %></p>
+                        <a style="pointer-events: none">See Info</a>
+                        <a style="pointer-events: none">See proffesions</a>
+                    </div>
+                    <div class="grid-item-child-img">
+                        <img src="/uploads/picture_<%= allTrades[2]._id %>.jpg">
+                    </div>
+                </div>
+
+                <div class="grid-item" style="opacity: 0.6;">
+                    <div class="grid-item-child">
+                        <h3><%= allTrades[3].name %></h3>
+                        <p><%= allTrades[3].description %></p>
+                        <a style="pointer-events: none">See Info</a>
+                        <a style="pointer-events: none">See proffesions</a>
+                    </div>
+                    <div class="grid-item-child-img">
+                        <img src="/uploads/picture_<%= allTrades[3]._id %>.jpg">
+                    </div>
+                </div>
+
+                <div class="grid-item" style="opacity: 0.3;">
+                    <div class="grid-item-child">
+                        <h3><%= allTrades[4].name %></h3>
+                        <p><%= allTrades[4].description %></p>
+                        <a style="pointer-events: none;">See Info</a>
+                        <a style="pointer-events: none">See proffesions</a>
+                    </div>
+                    <div class="grid-item-child-img">
+                        <img src="/uploads/picture_<%= allTrades[4]._id %>.jpg">
+                    </div>
+                </div>
+
+                <div class="grid-item" style="opacity: 0.3;">
+                    <div class="grid-item-child">
+                        <h3><%= allTrades[5].name %></h3>
+                        <p><%= allTrades[5].description %></p>
+                        <a style="pointer-events: none">See Info</a>
+                        <a style="pointer-events: none">See proffesions</a>
+                    </div>
+                    <div class="grid-item-child-img">
+                        <img src="/uploads/picture_<%= allTrades[5]._id %>.jpg">
+                    </div>
+                </div>
+    </section>
+
+    <div class="grid-item-form">
+
+        <h3 class="error-h3">Too see more information about business and classes they provide as well all different businesses you have to</h3>
+        <a href="/login" class="register-btn">Login Here</a>
+        <p class="login-paragraph">OR</p>
+        <a href="/register" class="register-btn register-btn-home">Register Here</a>
+    
+    
+    </div>
+
+<% } %>
+
+<%- include('partials/footer'); -%>

@@ -1,0 +1,151 @@
+[
+    {
+        "_id": "5d7a514b5d2c12c7449be045",
+        "name": "Marco Marulic",
+        "email": "marco@gmail.com",
+        "password": "123456789",
+        "userRole": "publisher",
+        "_comment": "to be an admin we have to change it manually in DB as we have an enum only for publisher and user in User model"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be046",
+        "name": "Steve Stevenson",
+        "email": "steve@gmail.com",
+        "password": "123456789",
+        "userRole": "publisher"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be047",
+        "name": "Angela Angelson",
+        "email": "angela@gmail.com",
+        "password": "123456789",
+        "userRole": "publisher"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be048",
+        "name": "Dinko Dinkovic",
+        "email": "dinko@gmail.com",
+        "password": "123456789",
+        "userRole": "publisher"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be049",
+        "name": "Stake Stekic",
+        "email": "stake@gmail.com",
+        "password": "123456789",
+        "userRole": "publisher"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be050",
+        "name": "Mister Cream",
+        "email": "mister@gmail.com",
+        "password": "123456789",
+        "userRole": "publisher"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be051",
+        "name": "Danijel Danijelson",
+        "email": "danijel@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be052",
+        "name": "Mark Markson",
+        "email": "mark@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be053",
+        "name": "Marta Wyga",
+        "email": "marta@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be054",
+        "name": "Kica Kicic",
+        "email": "kica@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be055",
+        "name": "Nico Nicic",
+        "email": "nico@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be056",
+        "name": "Disco Loco",
+        "email": "disco@gmail.com",
+        "password": "123456789",
+        "userRole": "publisher"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be057",
+        "name": "Jonny Bravo",
+        "email": "jonny@gmail.com",
+        "password": "123456789",
+        "userRole": "publisher"
+    },
+
+    {
+        "_id": "5d7a514b5d2c12c7449be058",
+        "name": "Eddie",
+        "email": "eddie@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be059",
+        "name": "Crish",
+        "email": "crish@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be060",
+        "name": "Bernardo",
+        "email": "bernardo@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be061",
+        "name": "Ravy",
+        "email": "ravy@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be062",
+        "name": "Karol",
+        "email": "karol@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be063",
+        "name": "Aga",
+        "email": "aga@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be064",
+        "name": "Michal",
+        "email": "michal@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be065",
+        "name": "Lion",
+        "email": "lino@gmail.com",
+        "password": "123456789",
+        "userRole": "user"
+    }
+]

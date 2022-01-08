@@ -1,0 +1,47 @@
+<%- include('partials/header'); -%>
+
+<% if (user) { %>
+    <a href="/logout">Logout</a>
+    <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+</header>
+
+<div class="register-image"></div>
+
+<div>
+
+<form action='/cart' method="POST" class="">
+  <div class="cart-container">
+
+
+    
+    <div class="cart-container-first-child">
+        <h2>Items currently in the basket: <% if (Object.keys(cartItems).length === 0) { %> No items <% } %></h2>
+        <% Object.keys(cartItems).forEach(function(key){ %>
+          <p><%=key%> <span class="minus-plus"><a href="/removeitem/<%= key %>" class="remove"><i class="fas fa-minus-circle"></i></a><span class="item-count"><%=cartItems[key]%></span><a href="/additem/<%= key %>" class="add"><i class="fas fa-plus-circle"></i></a></span> </p>
+        <% }); %>
+        <% if (Object.keys(cartItems).length !== 0) { %>
+        <h2>Total Cost: <%= cost %>,00</h2>
+        <% } %>
+        <h1 style="color: green; padding-bottom: 10px; font-size: 1.3rem; margin-bottom: 0.4rem; text-align: center;"><%= errors %></h1>
+    </div>
+    <div class="child-grid-container">
+      <!-- <label for="firstname" class="item1">First name:</label> -->
+      <input type="text" id="firstname" name="firstname" value="" required class="item2" placeholder="First name">
+      <!-- <label for="lastname" class="item3">Last name:</label> -->
+      <input type="text" id="lastname" name="lastname" value="" required class="item4" placeholder="Last name">
+      <!-- <label for="emailaddress" class="item5">Email address:</label> -->
+      <input type="email" id="emailaddress" name="emailaddress" value="" required class="item6" placeholder="Email address">
+      <!-- <label for="cardnumber"class="item7">Card Number:</label> -->
+      <input type="text" id="cardnumber" name="cardnumber" value="" required class="item8" placeholder="Card number">
+      <!-- <label for="cvv" class="item9"></label> -->
+      <input type="text" id="cvv" name="cvv" value="" required class="item10" placeholder="CVV">
+      <!-- <label for="expirydate" class="item11">Expiry Date</label> -->
+      <input type="text" id="expirydate" name="expirydate" value="" required class="item12" placeholder="dd/mm/yyyy - expiry date"><br>
+      <input type="submit" value="Complete Payment" class="input-submit-btn item13">
+    </div>  
+  </div>
+  </form>
+  </div>
+
+<% } %>
+<%- include('partials/footer'); -%>

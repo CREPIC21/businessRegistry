@@ -1,0 +1,131 @@
+[
+    {
+		"_id": "5d713995b721c3bb38c1f5c1",
+		"title": "Delicious Food",
+		"text": "The food was delicious, although the burger was quite bland so I asked for some aoli and they brought me mayo with what tasted like a few spices just added. It was super bland too. I used a tiny bit and just ate the burger. They ended up charging me $3.00 for the extra mayo! I know sometimes it’s an up charge but I would have preferred to have been told that before I received it.",
+		"rating": 6,
+		"trade": "5d713995b721c3bb38c1f5d0",
+		"userID": "5d7a514b5d2c12c7449be052"
+	},
+    {
+		"_id": "5d713995b721c3bb38c1f5c2",
+		"title": "Never again",
+		"text": "I didn't even think to look at the reviews because I've always had the best experience but I was very surprised to find the waitress had attitude and the host was rushing us out of table. I asked for medium rare prime rib and got rare prime rib and it was cold. Any requests for fresh mint or AF drinks was automatically a NO. Will not go there again.",
+		"rating": 1,
+		"trade": "5d713995b721c3bb38c1f5d1",
+		"userID": "5d7a514b5d2c12c7449be053"
+	},
+    {
+		"_id": "5d713995b721c3bb38c1f5c3",
+		"title": "Wow, wow, wow",
+		"text": "We had an excellent dinner with great service. Mandy was our server and was very helpful and attentive. Our meals came exactly as ordered and arrived hot and nicely plated. The views are amazing.",
+		"rating": 9,
+		"trade": "5d713995b721c3bb38c1f5d2",
+		"userID": "5d7a514b5d2c12c7449be054"
+	},
+    {
+		"_id": "5d713995b721c3bb38c1f5c4",
+		"title": "Not up to standards",
+		"text": "Some food was bang on good, others not so much. Prime rib steak was excellent, calamari was overcooked, tuna tartar was excellent, lobster was dry and tasteless. Waitress was clumsy and not really friendly, but to be expected with covid.",
+		"rating": 2,
+		"trade": "5d713995b721c3bb38c1f5d3",
+		"userID": "5d7a514b5d2c12c7449be055"
+	},
+	{
+		"_id": "5d713995b721c3bb38c1f5c5",
+		"title": "Excellent Pizza",
+		"text": " I booked this restaurant to try something new that we hadn't tried before. So glad we did! We are an Italian family visiting and had dinner here on Friday Sept 10, 2021. We had an incredible experience which started with our amazing server Anne. She was so warm, knowledgeable and friendly and truly made our experience memorable. The food was Fantastic!! No complaints whatsoever. We will definitely be back!!",
+		"rating": 10,
+		"trade": "5d713995b721c3bb38c1f5d4",
+		"userID": "5d7a514b5d2c12c7449be052"
+	},
+    {
+		"_id": "5d713995b721c3bb38c1f5c6",
+		"title": "Delicious food, great server",
+		"text": "Visited on July 12th for lunch, for a birthday. Our server was polite and attentive and made our experience wonderful. Our lunch was delicious!",
+		"rating": 10,
+		"trade": "5d713995b721c3bb38c1f5d5",
+		"userID": "5d7a514b5d2c12c7449be053"
+	},
+    {
+		"_id": "5d713995b721c3bb38c1f5c7",
+		"title": "Food Okay! Wouldn't but again.",
+		"text": "Food was scarce but for $90 expected more. Meat was just okay vegetables were scarce. sauce looked expired. Not the quality you'd expect. Plastic knife that can't cut meat. Really? Fail!!",
+		"rating": 4,
+		"trade": "5d713995b721c3bb38c1f5d6",
+		"userID": "5d7a514b5d2c12c7449be054"
+	},
+    {
+		"_id": "5d713995b721c3bb38c1f5c8",
+		"title": "Take Out Efficiency",
+		"text": "Online order and picked up dinner for 4 peak hours New Year's. Efficient service. Very good food quality.",
+		"rating": 9,
+		"trade": "5d713995b721c3bb38c1f5d7",
+		"userID": "5d7a514b5d2c12c7449be055"
+	},
+
+	{
+		"_id": "5d713995b721c3bb38c1f5c9",
+		"title": "Chicken and ribs is where it's at!",
+		"text": " This place never fails at providing amazing food! No matter where I travel to, they have never let me down!",
+		"rating": 10,
+		"trade": "5d713995b721c3bb38c1f5d0",
+		"userID": "5d7a514b5d2c12c7449be058"
+	},
+	{
+		"_id": "5d713995b721c3bb38c1f5e1",
+		"title": "Wonderful Visit",
+		"text": "Great food and service. Well definitely visit again. Thank you Alicia for the kind words and being our server.",
+		"rating": 10,
+		"trade": "5d713995b721c3bb38c1f5d1",
+		"userID": "5d7a514b5d2c12c7449be059"
+	},
+	{
+		"_id": "5d713995b721c3bb38c1f5e2",
+		"title": "Great Dining",
+		"text": "Still a great place to visit during the pandemic. Safety protocol in place. My New York steak was cooked to perfection and Caesar salad was fresh and crisp. My husband’s chicken was render and spiced just right. Serving staff were excellent and attentive.",
+		"rating": 9,
+		"trade": "5d713995b721c3bb38c1f5d2",
+		"userID": "5d7a514b5d2c12c7449be060"
+	},
+	{
+		"_id": "5d713995b721c3bb38c1f5e3",
+		"title": "Poor food",
+		"text": "Really for the price I was very disappointed small portions and slow service ...you can do better other restaurants I have visited have been better",
+		"rating": 2,
+		"trade": "5d713995b721c3bb38c1f5d3",
+		"userID": "5d7a514b5d2c12c7449be061"
+	},
+	{
+		"_id": "5d713995b721c3bb38c1f5e4",
+		"title": "Perfect",
+		"text": "Food was fantastic, service was great and awesome value for the money. The steak and lobster was amazing as was our complimentary anniversary desert!",
+		"rating": 10,
+		"trade": "5d713995b721c3bb38c1f5d4",
+		"userID": "5d7a514b5d2c12c7449be062"
+	},
+	{
+		"_id": "5d713995b721c3bb38c1f5e5",
+		"title": "Great Food and View",
+		"text": "My daughter and I went here for dinner. Great view, excellent fillet mignon, crab and lobster! Attentive service. Highly recommended.",
+		"rating": 10,
+		"trade": "5d713995b721c3bb38c1f5d5",
+		"userID": "5d7a514b5d2c12c7449be063"
+	},
+	{
+		"_id": "5d713995b721c3bb38c1f5e6",
+		"title": "Food Okay! Wouldn't but again.",
+		"text": "Always a good meal here. A little pricey but good. Excellent server, salad was a little warm. View wasn't very good where we were seated.",
+		"rating": 7,
+		"trade": "5d713995b721c3bb38c1f5d6",
+		"userID": "5d7a514b5d2c12c7449be064"
+	},
+	{
+		"_id": "5d713995b721c3bb38c1f5e7",
+		"title": "Dinner",
+		"text": "Amazing restaurant with a great food a love a good steak and definitely this is the right place for a good steak the staff was very helpful and knowledgeable considering the Covid-19 situation they doing a great job Cheers",
+		"rating": 10,
+		"trade": "5d713995b721c3bb38c1f5d7",
+		"userID": "5d7a514b5d2c12c7449be065"
+	}
+]

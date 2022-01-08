@@ -1,0 +1,24 @@
+<%- include('partials/header'); -%>
+
+<% if (user) { %>
+    <a href="/logout">Logout</a>
+    <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+<%} else { %>
+    <a href="/login">Login</a>
+<% } %>
+</header>
+
+<section class="grid-container-section">
+        <% proffesionsToRender.forEach(function(proffesion){ %>
+            <div class="grid-item-proffesions" style="position: relative;">
+                <h3> <%= proffesion.title %> </h3>
+                <p> <%= proffesion.description %> </p>
+                <p>Price: <%= proffesion.classCost %> </p>
+                <p>Skill Level: <%= proffesion.minimumSkillLevel %> </p>
+                <a href="/addToCart/<%= proffesion.title %>" class="add-to-cart-btn <%= proffesion._id %>">Add To Cart <i class="fas fa-shopping-cart"></i></a>
+                <h1 id="id<%= proffesion._id %>" class="added-to-basket-popup"><i class="fas fa-exclamation-circle"></i> Item added to cart</i></i></h1>
+            </div>
+        <% }); %>
+</section>
+
+<%- include('partials/footer'); -%>
