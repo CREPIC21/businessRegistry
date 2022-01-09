@@ -1,15 +1,15 @@
-const express = require('express');
-// file system module, included with node - https://www.w3schools.com/nodejs/nodejs_filesystem.asp
-const fs = require('fs');
-const path = require('path');
-const PDFDocument = require('pdfkit');
-const Trade = require('../models/Trade');
-const Proffesion = require('../models/Proffesion');
-const Review = require('../models/Review');
-const User = require('../models/User');
-const sendEmail = require('../utils/sendEmail');
+// const express = require('express');
+// // file system module, included with node - https://www.w3schools.com/nodejs/nodejs_filesystem.asp
+// const fs = require('fs');
+// const path = require('path');
+// const PDFDocument = require('pdfkit');
+// const Trade = require('../models/Trade');
+// const Proffesion = require('../models/Proffesion');
+// const Review = require('../models/Review');
+// const User = require('../models/User');
+// const sendEmail = require('../utils/sendEmail');
 
-const router = express.Router();
+// const router = express.Router();
 
 // // Display home page(landing page) - user not logged in
 // router.get('/', async function(req, res) {
@@ -444,4 +444,4 @@ const router = express.Router();
 //     // res.status(204).send();         
 // });
 
-module.exports = router;
+// module.exports = router;
