@@ -1,10 +1,6 @@
 <%- include('partials/header'); -%>
 
-<% if (user) { %>
-  <a href="/logout">Logout</a>
-  <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
-</header>
-<%} else { %>
+<% if (!user) { %>
   <a href="/login">Login</a>
   <a href="/cart" class="cart-btn-disable"><i class="fas fa-shopping-cart"></i></a>
 </header>
