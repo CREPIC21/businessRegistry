@@ -45,6 +45,7 @@ const trade = require('./frontend_routes/trade');
 const cart = require('./frontend_routes/cart');
 const contact = require('./frontend_routes/contact');
 const logout = require('./frontend_routes/logout');
+const apiDocs = require('./frontend_routes/api');
 
 const comment = require('./frontend_routes/utils/comment');
 const removeCartItem = require('./frontend_routes/utils/removeCartItem');
@@ -128,6 +129,7 @@ app.use('/trade', trade);
 app.use('/cart', cart);
 app.use('/contact', contact);
 app.use('/logout', logout);
+app.use('/api', apiDocs);
 
 app.use('/comment', comment);
 app.use('/removeitem', removeCartItem);

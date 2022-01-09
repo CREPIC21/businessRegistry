@@ -1,4 +1,0 @@
-Dear Cart, this is your confirmatiion of purchased classes. please find all the information below:
-                    Cooking class starts on: 12.12.2022 and finishes on 26.12.2022. Classes are held Monday to Friday from 18:00 - 22:00.
-                    Total amount paid: 5000.
-                    Your confirmation code: 91849083948
