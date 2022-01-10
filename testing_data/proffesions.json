@@ -11,6 +11,18 @@
 		"userID": "5d7a514b5d2c12c7449be045"
 	},
 
+	{
+		"_id": "5d713995b721c3bb38c1f5e3",
+		"title": "Lasagna Cooking Class",
+		"description": "Learn how to make Traditional Italian Lasagna from scratch.",
+		"weeks": 10,
+		"classCost": 4000,
+		"minimumSkillLevel": "beginner",
+		"certificateAvaliable": true,
+		"trade": "5d713995b721c3bb38c1f5d0",
+		"userID": "5d7a514b5d2c12c7449be045"
+	},
+
     {
 		"_id": "5d713995b721c3bb38c1f5d5",
 		"title": "Coctails Master Class",
@@ -91,8 +103,8 @@
 		"classCost": 2500,
 		"minimumSkillLevel": "beginner",
 		"certificateAvaliable": true,
-		"trade": "5d713995b721c3bb38c1f5d3",
-		"userID": "5d7a514b5d2c12c7449be048"
+		"trade": "5d713995b721c3bb38c1f5d4",
+		"userID": "5d7a514b5d2c12c7449be049"
 	},
 
     {
@@ -103,7 +115,79 @@
 		"classCost": 2500,
 		"minimumSkillLevel": "beginner",
 		"certificateAvaliable": true,
-		"trade": "5d713995b721c3bb38c1f5d3",
-		"userID": "5d7a514b5d2c12c7449be048"
+		"trade": "5d713995b721c3bb38c1f5d4",
+		"userID": "5d7a514b5d2c12c7449be049"
+	},
+
+	{
+		"_id": "5d713995b721c3bb38c1f5e4",
+		"title": "Ice Cream Master Class",
+		"description": "Learn everything about cooking your own burgers from scratch: buns, patties, sauces, toppings.",
+		"weeks": 3,
+		"classCost": 2500,
+		"minimumSkillLevel": "beginner",
+		"certificateAvaliable": true,
+		"trade": "5d713995b721c3bb38c1f5d5",
+		"userID": "5d7a514b5d2c12c7449be050"
+	},
+
+    {
+		"_id": "5d713995b721c3bb38c1f5e5",
+		"title": "Dessert Magic Class",
+		"description": "Learn cooking techniques for making ravenous desserts that can be served at dinner parties or for relishing at home with your family.",
+		"weeks": 3,
+		"classCost": 2500,
+		"minimumSkillLevel": "beginner",
+		"certificateAvaliable": true,
+		"trade": "5d713995b721c3bb38c1f5d5",
+		"userID": "5d7a514b5d2c12c7449be050"
+	},
+
+	{
+		"_id": "5d713995b721c3bb38c1f5e6",
+		"title": "Tango Dancing Lessons",
+		"description": "Learn a foundation of moves and dance with passion to a soundtrack packed with authentic tango rhythms.",
+		"weeks": 3,
+		"classCost": 2500,
+		"minimumSkillLevel": "beginner",
+		"certificateAvaliable": true,
+		"trade": "5d713995b721c3bb38c1f5d6",
+		"userID": "5d7a514b5d2c12c7449be056"
+	},
+
+    {
+		"_id": "5d713995b721c3bb38c1f5e7",
+		"title": "DJ Master Class",
+		"description": "Learn how to mix on vinyl and digital using DJ stations.",
+		"weeks": 3,
+		"classCost": 2500,
+		"minimumSkillLevel": "beginner",
+		"certificateAvaliable": true,
+		"trade": "5d713995b721c3bb38c1f5d6",
+		"userID": "5d7a514b5d2c12c7449be056"
+	},
+
+	{
+		"_id": "5d713995b721c3bb38c1f5e8",
+		"title": "Souvlaki Cooking Class",
+		"description": "Learn how to grill the skewers, chop the veggies, make the ultimate tzatziki and finally how to wrap it.",
+		"weeks": 3,
+		"classCost": 2500,
+		"minimumSkillLevel": "beginner",
+		"certificateAvaliable": true,
+		"trade": "5d713995b721c3bb38c1f5d7",
+		"userID": "5d7a514b5d2c12c7449be057"
+	},
+
+	{
+		"_id": "5d713995b721c3bb38c1f5e9",
+		"title": "Greek Seafood Cooking Class",
+		"description": "learn how to prepare Greek seafood that you would expect to find in a Greek family home.",
+		"weeks": 3,
+		"classCost": 2500,
+		"minimumSkillLevel": "beginner",
+		"certificateAvaliable": true,
+		"trade": "5d713995b721c3bb38c1f5d7",
+		"userID": "5d7a514b5d2c12c7449be057"
 	}
 ]

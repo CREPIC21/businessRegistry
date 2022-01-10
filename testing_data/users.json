@@ -147,5 +147,12 @@
         "email": "lino@gmail.com",
         "password": "123456789",
         "userRole": "user"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be066",
+        "name": "Cart",
+        "email": "cart@gmail.com",
+        "password": "cart12345",
+        "userRole": "user"
     }
 ]
