@@ -12,6 +12,8 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Orelega+One&display=swap');
 
 * {
     box-sizing: border-box;
@@ -39,6 +41,8 @@ body {
     position: relative;
     padding-bottom: 66px;
     min-height: 100vh;
+    /* font-family: 'Orelega One', cursive; */
+    /* font-family: 'Merriweather Sans', sans-serif; */
 }
 
 .landing-image {
@@ -142,9 +146,9 @@ section {
     padding-right: 15px;
 }
 
-section h3, section p {
+/* section h3, section p {
     font-family: 'Hahmlet', serif;
-}
+} */
 
 section a {
     color: var(--gray);
@@ -205,7 +209,6 @@ section a:hover, .comment-form-container input.new-comment-btn:hover {
     padding-top: 1rem;
     margin-left: 2rem;
     margin-right: 2rem;
-
 }
 
 .trade-info-section h2 {
@@ -215,6 +218,40 @@ section a:hover, .comment-form-container input.new-comment-btn:hover {
 
 .trade-info-section p {
     color: var(--gray);
+}
+
+.trade-info-section p span {
+    color: var(--red);
+}
+
+/* Social icons */
+.trade-info-section i {
+    /* display: inline; */
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    color: white;
+    transform: rotate(0deg);
+    transition: transform 0.4s ease-in-out;
+}
+
+.trade-info-section i:hover, .my-contact-info-container i:hover {
+    color: var(--red);
+    transform: rotate(20deg);
+}
+
+.my-contact-info-container h3 span, .my-contact-info-container p span {
+    color: var(--red)
+}
+
+.my-contact-info-container i {
+    font-size: 1.5rem;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    color: white;
+    transform: rotate(0deg);
+    transition: transform 0.4s ease-in-out;
 }
 
 .trade-review {
@@ -325,6 +362,39 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
 }
 
 /* Contact page */
+
+.contact-container {
+    display: grid;
+    grid-template-columns: auto;
+    /* padding-bottom: 1.5rem; */
+    border-radius: 50%;
+}
+
+.my-contact-info-container {
+    text-align: center;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.my-contact-info-container h3 {
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+.my-contact-info-container span.span-company-name {
+    display: block;
+    width: 100%;
+}
+
+.google-map {
+    width: 100%;
+    height: 75%;
+    /* border: none; */
+    border: 1px solid var(--lightblack);
+    border-radius: 2px;
+}
+
 .form-image {
     background: url("/uploads/test-small.jpg");
     width: 100%;
@@ -586,14 +656,6 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
     opacity: 0.8;
 }
 
-/* Social icons for small screens for now not displayed */
-@media (max-width: 920px) {
-    .social-icons {
-        display: none;
-    }
-    
-}
-
 @media (max-width: 750px) and (min-width: 500px) {
     .cart-container-first-child {
         width: 65%;
@@ -638,6 +700,20 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
         position: absolute;
         top: 280px;
         width: 100%;
+    }
+
+    .contact-container {
+        display: grid;
+        grid-template-columns: 50% 45%;
+    }
+
+    .my-contact-info-container {
+        text-align: left;
+        margin-top: 40px;
+    }
+
+    .google-map {
+        height: 77%;
     }
 }
 
@@ -738,8 +814,8 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
       }
 
     /* Contact Page */
-    .grid-item-form {
-        grid-template-columns: 40%;
+    #contact-form div.grid-item-form {
+        grid-template-columns: 80%;
     }
 
     .form-image {
@@ -762,6 +838,10 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
         background-position: center;
     }
 
+    .grid-item-form {
+        grid-template-columns: 40%;
+    }
+
     /* Register Page */
     .register-image {
         background: url("/uploads/register-large.jpg");
@@ -775,16 +855,6 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
     /* Comment form */
     .comment-form-container-item {
         width: 40%;
-    }
-
-    /* Social icons only for the big screens */
-    a.social-icons {
-        display: inline;
-        font-size: 1rem;
-        padding: 0.6rem;
-        border-radius: 100%;
-        margin-left: 0.7rem;
-        margin-right: 0.7rem;
     }
 
     .grid-item-form input, .comment-form-container input {
@@ -810,5 +880,12 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
 
     .add-to-cart-btn {
         width: 30%;
+    }
+  }
+
+  @media (min-width: 1420px) {
+    .my-contact-info-container span.span-company-name {
+        display: inline;
+        width: 100%;
     }
   }

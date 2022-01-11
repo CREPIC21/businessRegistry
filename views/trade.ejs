@@ -8,30 +8,35 @@
 <% } %>
 </header>
 
-    <div class="trade-image">
+    <div class="trade-image" loading="lazy">
         <!-- <img src="uploads/contact-large.jpg" class="" alt=""> -->
     </div>
     <div class="trade-info-section">
     <h2> <%= tradeToRender.name %> - <%= tradeToRender.businessType %></h2>
     <p> <%= tradeToRender.description %> </p>
-    <p> Website: <%= tradeToRender.website %> </p>
-    <p> Email: <%= tradeToRender.email %> </p>
-    <p> Phone: <%= tradeToRender.phone %> </p>
+    <p> <span>Website:</span> <%= tradeToRender.website %> </p>
+    <p> <span>Email:</span> <%= tradeToRender.email %> </p>
+    <p> <span>Phone:</span> <%= tradeToRender.phone %> </p>
 
 
     <% if(tradeToRender.averageRating < 2 || tradeToRender.averageRating == 2) { %>
-        <p> Rating: <%= tradeToRender.averageRating %> ⭐</p>
+        <p> <span>Rating:</span> <%= tradeToRender.averageRating %> ⭐</p>
     <%} else if (tradeToRender.averageRating < 4 || tradeToRender.averageRating == 4) { %>
-        <p> Rating: <%= tradeToRender.averageRating %> ⭐⭐</p>
+        <p> <span>Rating:</span> <%= tradeToRender.averageRating %> ⭐⭐</p>
     <%} else if (tradeToRender.averageRating < 6 || tradeToRender.averageRating == 6) { %>
-        <p> Rating: <%= tradeToRender.averageRating %> ⭐⭐⭐</p>
+        <p> <span>Rating:</span> <%= tradeToRender.averageRating %> ⭐⭐⭐</p>
     <%} else if (tradeToRender.averageRating < 8 || tradeToRender.averageRating == 8) { %>
-        <p> Rating: <%= tradeToRender.averageRating %> ⭐⭐⭐⭐</p>
+        <p> <span>Rating:</span> <%= tradeToRender.averageRating %> ⭐⭐⭐⭐</p>
     <%} else if (tradeToRender.averageRating < 10 || tradeToRender.averageRating == 10) { %>
-        <p> Rating: <%= tradeToRender.averageRating %> ⭐⭐⭐⭐⭐</p>
+        <p> <span>Rating:</span> <%= tradeToRender.averageRating %> ⭐⭐⭐⭐⭐</p>
     <%} else { %>
-        <p> Rating: 0 <%= tradeToRender.averageRating %> </p>
+        <p> <span>Rating:</span> 0 <%= tradeToRender.averageRating %> </p>
     <% } %>
+    <p>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.linkedin.com//" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </p>
     </div>
     <% reviewToRender.forEach(function(review){ %>
         <div class="trade-review">

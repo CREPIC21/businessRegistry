@@ -386,7 +386,7 @@ FRONTEND
   - NOW we need to make it nice
 
 Summarize of what needs to be done:
-- add social icons on the home page or on the individual trade page
+- add social icons on the home page or on the individual trade page - DONE
 - add comments, add proffesions, add trades
 - add more info for individual proffesions(as well start date - dynamically using Date.now(), course duration...)
 - backround image for cart page
