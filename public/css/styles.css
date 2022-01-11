@@ -379,6 +379,7 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
 
 .my-contact-info-container h3 {
     padding-bottom: 1rem;
+    padding-top: 0;
     width: 100%;
 }
 
