@@ -36,6 +36,13 @@ input:-webkit-autofill {
     -webkit-text-fill-color: var(--gray);
   }
 
+/* Prevent changing the style on iPhone */
+input {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}
+
 body {
     background-color: var(--lightblack);
     position: relative;
