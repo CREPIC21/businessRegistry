@@ -146,7 +146,7 @@ https://www.mongodb.com/products/compass
  - created middelware in model/Trade.js for removing proffesions once trade is deleted
  - modified controllers/trades.js DELETE request
   - changed findByIdAndDelete() to findById()
-  - added bootcamp.remove() for functionality to work
+  - added trade.remove() for functionality to work
 
 - created a route for GET single proffesion in controllers/proffesions.js and added route to routes/proffesions.js
 
