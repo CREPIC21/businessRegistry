@@ -78,7 +78,7 @@ https://www.mongodb.com/products/compass
 
 - modified error.js and created error variable and assign it to err values
   - created a condition for "CastError"
-  - modified all catch conditions in trades.js to use next(error) - see file in code_changes_history
+  - modified all catch conditions in trades.js to use next(error)
   - also modified UPDATE and DELETE methods for condition if(!trade) with error handlers
 
 - created error handlers in error.js for "Mongoose duplicate key ID" and "Mongoose validation error"
@@ -86,7 +86,7 @@ https://www.mongodb.com/products/compass
 - cleaned up the code, our try/catch block in trades.js and used async/await middleware
   - https://www.acuriousanimal.com/blog/20180315/express-async-middleware
   - created new middleware async.js and imported it to controllers trades.js
-  - cleaned up all try/catch blocks and added asyncHandler to each request - see file in code_changes_history before changes
+  - cleaned up all try/catch blocks and added asyncHandler to each request
   - made a copy of controller trades.js in code_changes_history folder so we can have a new clean code
 
 - mongoose middleware & slugify
