@@ -64,6 +64,10 @@ exports.postCart = asyncHandler ( async (req, res, next) => {
 
     await sendEmail({
         email: `${process.env.FROM_NAME} <${process.env.FROM_EMAIL}`,
+
+        // email_sender: `${process.env.FROM_NAME} <${process.env.FROM_EMAIL}`,
+        // email_reciever: req.body.email,
+
         subject: 'Payment Confirmation',
         message: `Confirmation attached as pdf to this message`,
         files: [

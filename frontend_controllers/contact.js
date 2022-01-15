@@ -11,6 +11,10 @@ exports.postContact = asyncHandler( async (req, res, next) => {
     try {
         await sendEmail({
             email: `${process.env.FROM_NAME} <${process.env.FROM_EMAIL}`,
+
+            // email_sender: `${process.env.FROM_NAME} <${process.env.FROM_EMAIL}`,
+            // email_reciever: `${process.env.FROM_NAME} <${process.env.FROM_EMAIL}`,
+
             subject: 'Contact Form Message',
             message: req.body.message
         });

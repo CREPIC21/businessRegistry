@@ -36,9 +36,9 @@ const importData = async() => {
         console.log('Data imported to database'.green.italic);
 
         /*
-        The exit in node js is done in two ways:
-        1. Calling process. exit() explicitly.
-        2. Or, if nodejs event loop is done with all tasks, and there is nothing left to do. Then, the node application will automatically exit.
+        The exit in node.js is done in two ways:
+        1. Calling process.exit() explicitly.
+        2. Or, if node.js event loop is done with all tasks, and there is nothing left to do. Then, the node application will automatically exit.
         In our case, we needed to explicitly or forcefully exit nodejs before other events being finished. So we used the same.
         */
         process.exit();

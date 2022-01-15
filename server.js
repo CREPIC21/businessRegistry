@@ -1,25 +1,40 @@
+// server framework for Node.js.
 const express = require('express');
 // loads environment variables from a .env file into process.env. 
 const dotenv = require('dotenv');
-// Package for logging requests to console (each request made in Postman will be logged to the console)
+// package for logging requests to console (each request made in Postman will be logged to the console)
 const morgan = require('morgan');
-// Package for formating messages in the console
+// package for formating messages in the console
 const colors = require('colors');
+// middelware foer handling error messages
 const errorHandler = require('./middelware/error');
+// connection to MongoDB
 const connectDB = require('./config/db');
 // express middleware for uploading files
 const fileUpload = require('express-fileupload');
+// module that allows us to interact with file paths easily
 const path = require('path');
+// middleware which parses cookies attached to the client request object
 const cookieParser = require('cookie-parser');
+// middleware which sanitizes user-supplied data to prevent MongoDB Operator Injection - https://www.npmjs.com/package/express-mongo-sanitize
 const mongoSanitize = require('express-mongo-sanitize');
+// Helmet helps you secure your Express apps by setting various HTTP headers
 const helmet = require('helmet');
+// middleware to sanitize user input coming from POST body, GET queries, and url params
 const xss = require('xss-clean');
+// middleware for Express used to limit repeated requests to public APIs and/or endpoints such as password reset
 const rateLimit = require('express-rate-limit');
+// middleware to protect against HTTP Parameter Pollution attacks
 const hpp = require('hpp');
+// mechanism to allow or restrict requested resources on a web server depend on where the HTTP request was initiated
 const cors = require('cors');
+// simple templating language which is used to generate HTML markup with plain JavaScript
 const ejs = require('ejs');
+// allows express to read the body and then parse that into a Json object that we can understand
 const bodyParser = require('body-parser');
+// an HTTP server-side framework used to create and manage a session middleware
 const session = require('express-session');
+// library which allows you to flash messages
 const flash = require('connect-flash');
 
 // Load env variables from config.env file
@@ -63,12 +78,14 @@ app.set('view engine', 'ejs');
 // It works only if I add JSON.stringify, example: JSON.stringify(req.body)
 app.use(express.json());
 
+// https://www.section.io/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/
 app.use(session({
 	secret: 'secret',
 	resave: true,
 	saveUninitialized: true
 }));
 
+// Body parser
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -109,6 +126,7 @@ app.use(cors());
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Flash messages
 app.use(flash());
 
 // Mount routers - backend
