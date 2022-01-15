@@ -14,7 +14,7 @@ exports.getTrade = asyncHandler( async(req, res, next) => {
         let sessionUser = await User.findOne({ email: req.session.username}, 'name');
         let userAlreadyCommented = false;
     
-            // getting names of author reviws
+            // getting names of author reviews
             for(let i =0; i < reviewResults.length; i++) {
                 const userResult = await User.findOne({_id: reviewResults[i].userID}, 'name');
                 console.log(userResult)

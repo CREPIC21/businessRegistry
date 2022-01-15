@@ -7,7 +7,7 @@ npm init
 npm install express dotenv
 npm install -D nodemon
 
-- modified package.json for executing the enviroment:
+- modified package.json for executing the environment:
     "scripts": {
     "start": "NODE_ENV=production node server",
     "dev": "nodemon server"
@@ -20,13 +20,13 @@ npm install -D nodemon
 
 - created .gitignore file to not commit certain files when pushing the app on GitHub
 
-- created seperate file for routes trades.js and created router(insted of app)
+- created separate file for routes trades.js and created router(insted of app)
 
-- created seperate file for all routes in controllers trades.js and exported the to routes trades.js
+- created separate file for all routes in controllers trades.js and exported them to routes trades.js
 
-- created sepeate file for middelware logger.js -> provides logging functionality for an application. It can be used to display errors, warnings and debug messages, but we will use morgan as explained below -> logger later on deleted from the project
+- created separate file for middleware logger.js -> provides logging functionality for an application. It can be used to display errors, warnings and debug messages, but we will use morgan as explained below -> logger later on deleted from the project
 
-- installed third party middelware morgan -> npm install morgan
+- installed third party middleware morgan -> npm install morgan
 https://www.npmjs.com/package/morgan
 - what is middleware -> https://stackoverflow.com/questions/23259168/what-are-express-json-and-express-urlencoded
 
@@ -41,7 +41,7 @@ https://www.mongodb.com/products/compass
 - installed mongoose -> npm install mongoose
 - created db.js file in config for connection to database via server.js and env variable for MONGO_URI
 
-- installed colors for estetics of messages in terminal -> npm install colors
+- installed colors for esthetic of messages in terminal -> npm install colors
 
 - created our first model in models/Trade.js -> exported and imported to controllers/trades.js
 
@@ -51,12 +51,12 @@ https://www.mongodb.com/products/compass
 - modified GET route for get single trade
 - modified the rest of the routes -> GET, POST, UPDATE, DELETE
 
-- created middelware errorHandler which will return json data when request is 500
-  - created new middelware error.js
-  - imported the middelware to server.js and "IMPORTANT" executed it after "Mount routers"
+- created middleware errorHandler which will return json data when request is 500
+  - created new middleware error.js
+  - imported the middleware to server.js and "IMPORTANT" executed it after "Mount routers"
   - in GET single trade we changed catch configuration to use next(error)
   - testing done in Postman
-    - before error handler we would get HTML body with error message when using inproper ID
+    - before error handler we would get HTML body with error message when using improper ID
     - after including error handler we would get back json data error message
     - response below:
       {
@@ -64,9 +64,9 @@ https://www.mongodb.com/products/compass
       "error": "Cast to ObjectId failed for value \"614eee3213117f6564e11904kjkjkkj\" (type string) at path \"_id\" for model \"Business\""
       }
 
-    - created custom util errorResponse and formated our custom responses
+    - created custom util errorResponse and formatted our custom responses
       - created ErrorResponse class in utils errorResponse.js
-      - modified error.js middelware
+      - modified error.js middleware
       - modified error responses in GET single trade in controllers trades.js
       - tested in postman
       - new custom response below
@@ -83,19 +83,19 @@ https://www.mongodb.com/products/compass
 
 - created error handlers in error.js for "Mongoose duplicate key ID" and "Mongoose validation error"
 
-- cleaned up the code, our try/catch block in trades.js and used async/await middelware
+- cleaned up the code, our try/catch block in trades.js and used async/await middleware
   - https://www.acuriousanimal.com/blog/20180315/express-async-middleware
-  - created new middelware async.js and imported it to controlers trades.js
+  - created new middleware async.js and imported it to controllers trades.js
   - cleaned up all try/catch blocks and added asyncHandler to each request - see file in code_changes_history before changes
   - made a copy of controller trades.js in code_changes_history folder so we can have a new clean code
 
-- mongoose middelware & slugify
+- mongoose middleware & slugify
   - https://mongoosejs.com/docs/middleware.html
   - installed a third party package to create slug -> npm install slugify, and imported it to Trade.js models and created functionality for creating slug field in DB with desired value
     - https://www.npmjs.com/package/slug
     - now we can create slugs automatically when making a POST request using the TradeSchema.pre() - this is great
 
-- GeoJSON Locatopn & Geocoder Hook - MapQuest API
+- GeoJSON Location & Geocoder Hook - MapQuest API
   - https://www.npmjs.com/package/node-geocoder
   - installed geocoder -> npm install node-geocoder
   - created an account on https://developer.mapquest.com/user/me/apps
@@ -117,56 +117,56 @@ https://www.mongodb.com/products/compass
   - based on query parameters in URL we can filter by specific data in database: city, careers, averageCost...
   - added "averagePricePerCouple" to database for testing purposes
 
-- created SELECT and SORT filtering for GET trades in controler/trades.js
+- created SELECT and SORT filtering for GET trades in controller/trades.js
 
-- created PAGINATION and added pagination field to response for GET trades in controler/trdes.js
+- created PAGINATION and added pagination field to response for GET trades in controller/trdes.js
 
-- created new model LearnProffesion.js and exported it
+- created new model Learnprofession.js and exported it
   - added trades.json testing data
-  - as well adjusted seeder.js when importing/destroying DB to include learnProffesion.js
+  - as well, adjusted seeder.js when importing/destroying DB to include learnprofession.js
 
-- created proffesions routes and controller
-  - created controllers/proffesions.js -> added route to get all proffesions as well route to get specific proffesions for specific trade
-  - created routes/proffesions.js for getProffesions route
-    - added "mergeParams: true" parameter to router as we are rerouting from routes/trades.js when adding tradeId to get list of proffesions for that trade
+- created professions routes and controller
+  - created controllers/professions.js -> added route to get all professions as well route to get specific professions for specific trade
+  - created routes/professions.js for getProfessions route
+    - added "mergeParams: true" parameter to router as we are rerouting from routes/trades.js when adding tradeId to get list of professions for that trade
   - modified routes/trades.js
-    - we included other resource routers -> routers/proffesions.js
-    - we re-route to routers/proffesions.js when using tradeId in request parameters
+    - we included other resource routers -> routers/professions.js
+    - we re-route to routers/professions.js when using tradeId in request parameters
   - modified server.js
-    - added proffesions to "Route files" as well to "Mount routers"
-  - created "Proffesions" folder in Postman and added routes for GET proffesions and GET proffesions for specific trade
+    - added professions to "Route files" as well to "Mount routers"
+  - created "professions" folder in Postman and added routes for GET professions and GET professions for specific trade
 
-- added populate() to controllers/proffesions.js to getProffesions request -> cool feature
+- added populate() to controllers/professions.js to getProfessions request -> cool feature
   - https://mongoosejs.com/docs/populate.html
 
-- added populate() to controllers/trades.js to getTrades request to get proffesions associated with this trade -> cool feature
-  - modified models/Trade.js and added reverse virtual so we can get a list of proffesions associated with this trade when making GET request to get all trades
+- added populate() to controllers/trades.js to getTrades request to get professions associated with this trade -> cool feature
+  - modified models/Trade.js and added reverse virtual so we can get a list of professions associated with this trade when making GET request to get all trades
 
-- added additional functionality once when we delete trade to also delete proffesions associated to that trade
- - created middelware in model/Trade.js for removing proffesions once trade is deleted
+- added additional functionality once when we delete trade to also delete professions associated to that trade
+ - created middleware in model/Trade.js for removing professions once trade is deleted
  - modified controllers/trades.js DELETE request
   - changed findByIdAndDelete() to findById()
   - added trade.remove() for functionality to work
 
-- created a route for GET single proffesion in controllers/proffesions.js and added route to routes/proffesions.js
+- created a route for GET single profession in controllers/professions.js and added route to routes/professions.js
 
-- created a route for POST proffesion in controllers/proffesions.js and added route to routes/proffesions.js
+- created a route for POST profession in controllers/professions.js and added route to routes/professions.js
 
-- created routes for UPDATE and DELETE proffesions in controllers/proffesions.js and added routes to routes/proffesions.js
+- created routes for UPDATE and DELETE professions in controllers/professions.js and added routes to routes/professions.js
 
-- calculating avarege cost of course proffesion
+- calculating average cost of course profession
   - database deleted
-  - seeder run without proffesions
-  - added "avaregeProffesionsPrice" to Trade Model
-  - static method created which runs directly on the Proffesion Model getAvaregeCost()
-  - two middelware created in Proffesion Model to calculate avarege cost of all proffesion classes for specific trade
+  - seeder run without professions
+  - added "avaregeprofessionsPrice" to Trade Model
+  - static method created which runs directly on the profession Model getAvaregeCost()
+  - two middleware created in profession Model to calculate averagecost of all profession classes for specific trade
 
 - adding photo upload to trades
   - database deleted
   - seeder run normally
   - installed express-fileupload
     - https://www.npmjs.com/package/express-fileupload
-    - imported to server.js and added as a middelware to app.use(fileUpload());
+    - imported to server.js and added as a middleware to app.use(fileUpload());
   - route for upload photo created in controllers/trades.js and route added to routes/trades.js
   - uploaded image via Postman
     - body -> form-data
@@ -180,12 +180,12 @@ https://www.mongodb.com/products/compass
     - modified server.js
       - required 'path' and 'express-fileupload' and set static folder
 
-- created super middelware/advancedResults middelware for filtering that can be used in different routes
-  - created middelware in middelware/advancedResults
+- created super middleware/advancedResults middleware for filtering that can be used in different routes
+  - created middleware in middleware/advancedResults
   - modified GET all trades route in controllers/trades.js -> very simplified
-  - modified routes/trades.js to use model Trade and super advanced middelware
-  - modified routes/proffesions.js to use model Proffesion and super advanced middelware
-  - modified GET all proffesions route in controllers/proffesions.js -> very simplified
+  - modified routes/trades.js to use model Trade and super advanced middleware
+  - modified routes/professions.js to use model profession and super advanced middleware
+  - modified GET all professions route in controllers/professions.js -> very simplified
 
 - created views and partails folders for frontend
 - modified server.js to use ejs view engine
@@ -199,8 +199,8 @@ https://www.mongodb.com/products/compass
  - https://www.npmjs.com/package/bcryptjs
 - created a User Model Schema in models/User.js
 - created route for authentication in controllers/auth.js, added route to routes/auth.js and modified server.js(route files and mount routers)
-- created REGISTER route in contrellers/auth.js and added route to routes/auth.js
-- using bcrypt middelware we encrypted user password -> middelware run before saving the user in DB -> middelware added in model/User.js
+- created REGISTER route in controllers/auth.js and added route to routes/auth.js
+- using bcrypt middleware we encrypted user password -> middleware run before saving the user in DB -> middleware added in model/User.js
 - created a method for creating JWT in models/User.js which we use in controllers/auth.js
   - https://www.npmjs.com/package/jsonwebtoken
   - https://jwt.io/
@@ -208,35 +208,35 @@ https://www.mongodb.com/products/compass
   - once we do a request in Postman we can copy/paste the token in https://jwt.io/ and see the payload data
     - "id" in payload data is "_id" of the user in our database
 
-- created LOGIN route contrellers/auth.js and added route to routes/auth.js
+- created LOGIN route controllers/auth.js and added route to routes/auth.js
  - created a method for checking passwords JWT in models/User.js which we use in controllers/auth.js
 
-- installed package cookie-parser -> will allow as to have acces to "req.cookie" and we can set our token inside a cookie and validate it when it comes back to the server
+- installed package cookie-parser -> will allow as to have access to "req.cookie" and we can set our token inside a cookie and validate it when it comes back to the server
   - https://www.npmjs.com/package/cookie-parser
   - required in server.js and added to app.use()
   - added a method sendTokenResponse() in controllers/auth.js
   - replaced responses in REGISTER and LOGIN route to new method sendTokenResponse()
     - testing in Postman will show the cookie send with the response
 
-- created a middelware once we get a token we have to send a token to certain routes(CREATE NEW PROFFESION, only login user should be able to do add new proffesion) -> PROTECT
-  - created new middelware in middelware/auth.js "auth.js"
-  - middelware added to routes/trades.js and added to below rutes:
+- created a middleware once we get a token we have to send a token to certain routes(CREATE NEW profession, only login user should be able to do add new profession) -> PROTECT
+  - created new middleware in middleware/auth.js "auth.js"
+  - middleware added to routes/trades.js and added to below routes:
     - tradePhotoUpload, createTrade, updateTrade, deleteTrade
-  - middelware added to routes/proffesions.js and added to below rutes:
-    - createProffesion, updateProffesion, deleteProffesion
+  - middleware added to routes/professions.js and added to below routes:
+    - createprofession, updateprofession, deleteprofession
   - created a new route GET CURRENT LOGGED IN USER in controllers/auth.js
-    - route added to routes/auth.js as well the middelware for protected routes
-  - we setup storing the token in Postman(REGISTER and LOGIN route) so we don't have to add "Authorization" with "Bearer <token>" in headers when accessing the protected routes 
+    - route added to routes/auth.js as well the middleware for protected routes
+  - we set up storing the token in Postman(REGISTER and LOGIN route) so we don't have to add "Authorization" with "Bearer <token>" in headers when accessing the protected routes 
     - variable setup in "Tests" tab for REGISTER and LOGIN route-> "pm.environment.set("TOKEN", pm.response.json().token)"
       - token variable will be setup as env as soon user logs in or register
     - now in protected routes we can use "Authorization" tab -> type "Bearer Token" -> {{TOKEN}}
 
-created a middelware for authentication in middelware/auth.js -> AUTHORIZE
+created a middleware for authentication in middleware/auth.js -> AUTHORIZE
   - function checks if a logged in user has a specific role so he can make changes to certain routes(POST, UPDATE, DELETE)
-  - middelware added to routes/trades.js and added to below rutes:
+  - middleware added to routes/trades.js and added to below routes:
     - tradePhotoUpload, createTrade, updateTrade, deleteTrade
-  - middelware added to routes/proffesions.js and added to below rutes:
-    - createProffesion, updateProffesion, deleteProffesion
+  - middleware added to routes/professions.js and added to below routes:
+    - createprofession, updateprofession, deleteprofession
 
 - how to add comments in .json file
   - https://reqbin.com/req/wtvjp1a3/json-comment-example
@@ -246,12 +246,12 @@ created a middelware for authentication in middelware/auth.js -> AUTHORIZE
 - modified route POST create new trade
   - added functionality:
     - when user is logged in he can create one trade as publisher
-    - only admin can create more then one trade
+    - only admin can create more than one trade
     - associated the user.id from request and added it to req.body so when creating a trade that trade will be associated with that user(userID)
 
 - made modification to UPDATE and DELETE trade in controllers/trades.js as well UPLOAD photo so only the admin or the owner of trade can update or delete the trade
 
-- made modification to CREATE, UPDATE and DELETE proffesions in controllers/proffesions.js so only the admin or the owner of trade/proffesion can create,update or delete the trade
+- made modification to CREATE, UPDATE and DELETE professions in controllers/professions.js so only the admin or the owner of trade/profession can create,update or delete the trade
 
 - created a new route in controllers/auth.js FORGOT PASSWORD and added route to routes/auth.js
   - created a new method in User model getResetPasswordToken() to generate and hash password token which is used in FORGOT PASSWORD route
@@ -264,11 +264,11 @@ created a middelware for authentication in middelware/auth.js -> AUTHORIZE
   - created new util sendEmail in utils/sendEmail.js and imported it to controllers/auth.js
   - modified our FORGOT PASSWORD route and added functionality to send an email to the user with complete URL and reset token
   - added RESET PASSWORD route in controllers/auth.js and imported it to routes/auth.js
-    - once user recieves an email he can use the provided URL in the email to reset/create new password
+    - once user receives an email he can use the provided URL in the email to reset/create new password
 
-- created new routes for UPDATE USER DETAILS(name and email) and UPDATE PASSWORD in controllers/auth.js and added routes to routes/auth.js
+- created new routes to UPDATE USER DETAILS(name and email) and UPDATE PASSWORD in controllers/auth.js and added routes to routes/auth.js
 
-- created new routes only accesible by admin in controllers/users.js - get users, get user, create user, update user, delete user
+- created new routes only accessible by admin in controllers/users.js - get users, get user, create user, update user, delete user
   - routes added to routes/users.js, all the routes are rerouting from routes/auth.js to routes/users.js as each route starts with "/api/v1/auth"
   - routes/auth.js also modified as there is rerouting as explained above
   - server.js modified -> route files and mount routers added 
@@ -285,10 +285,10 @@ created a middelware for authentication in middelware/auth.js -> AUTHORIZE
   - new model added to seeder.js
 
 - added additional functionality in model Reviews
-  - functionality to calculate avarege rating for trade
+  - functionality to calculate averagerating for trade
   - calculated value will be placed in "averageRating" field in model Trade DB
 
-- created new routes for UPDATE REVIEW and DELETE REVIEW in controllers/reviews.js and added routes to routes/reviews.js
+- created new routes to UPDATE REVIEW and DELETE REVIEW in controllers/reviews.js and added routes to routes/reviews.js
    routes added in Postman as well
 
 API SECURITY
@@ -352,7 +352,7 @@ API SECURITY
   - hpp -> middleware to protect against HTTP Parameter Pollution attacks
     - https://github.com/analog-nico/hpp
   - cors -> package for providing a Connect/Express middleware that can be used to enable CORS with various options
-    - once we upload our app to domain and then if we create a frontend application on a different domain we will be able to comunnicate with our API
+    - once we upload our app to domain and then if we create a frontend application on a different domain we will be able to communicate with our API
     - https://github.com/expressjs/cors
 
 
@@ -361,36 +361,65 @@ FRONTEND
   - frontend for routes
   - public for static files(css, images)
   - views for ejs rendering HTML pages
+  
+Login View
+- validation functionality implemented via auth.js function
+- view visible for visitors that are not logged in, once visitor is logged in, if he tries to access login route in browser URL adding "/login" he will be redirected to "/home" route
 
+Registration View
+- validation functionality implemented via auth.js function
+- view visible for visitors that are not logged in, once visitor is logged in, if he tries to access register route in browser URL adding "/register" he will be redirected to "/home" route
 
+Contact View
+- visible to all visitors(logged in or not logged in)
+- visitor can send a message and it will be sent to my mailtrap testing account
+- google location added
+  - https://extension.umaine.edu/plugged-in/technology-marketing-communications/web/tips-for-web-managers/embed-map/
+
+Home View
+- visitors that are not logged in will not be able to see list of all businesses and can't access "See Info" and "See professions" buttons
+  - once logged in visitor has access to mentioned features above
+
+Trade View Info
+- visible only to visitors that are logged in
+- stars for rating are based on calculation of average rating stored in Trade model under avarageRating field which is calculated and added by the functionality implemented in the Review model once the review is submitted
+- if the visitor already posted the review for trade the form for posting review will not be visible for that user
+
+Profession View Info
+- visible only to visitors that are logged in
+- displays all classes/professions available under specific trade
+- profession can be added to the cart
+
+Summarize of what needs to be done:
+- add button for devs somewhere(API Docs) which will redirect to "/api" documentation
+- fix CSP policy for font awesome - at the moment helmet() is commented out - causes font awesome icons not to show up
+- add more info for individual professions(as well start date - dynamically using Date.now(), course duration...)
+- background image for cart page
+- style PDF that is sent, add necessary information in the PDF
+- check responsiveness
+- add button to change background colors - day/night
+- test sending emails on my real test accounts
+- check posting reviews functionality
+  - only visitor that did not post review will have form visible
+  - owner or admin can not publish reviews - needs to be fixed(at the moment owner can add review)
+  - admin can modify reviews only through API 
+
+DONE ASSIGNMENTS
 - fix the about page - DONE REMOVED
 - maybe change photo for on info page for trade, add more info so the footer will be lower - FIXED
-- fix CSP policy for font awsome
-- add more comments - ok
-- add more proffesions
+- add more comments - DONE
+- add more professions - DONE
 - make functionality for add to chart button -> add cart parameter to Users model - DONE
-- add social media icons
-- create add to cart page, show list of itemas added to cart, create simple form(name, surname, credit card details), send email with confirmation(bar code for access the course or pdf file with confirmation) - DONE
-- check flash messages on wrong login and registration page(change colors - red for errors, green for success)
-
-
+- add social media icons - DONE
+- create add to cart page, show list of items added to cart, create simple form(name, surname, credit card details), send email with confirmation(bar code for access the course or pdf file with confirmation) - DONE
+- check flash messages on wrong login and registration page(change colors - red for errors, green for success) - DONE
 - finish registration process - DONE
   - registration after email is sent - DONE
     - thank you for registering page, confirmation that the user is in DB(checking by token in URL) - DONE
     - trying to figure out connect-flash - DONE
     - fix confirm registration page, confirm the token in URL before user is able to log in, once logged in delete the token from the DB - DONE
-
 - once user clicks on add to chart button we need to add cost of the class to user DB - FIXED
 - send PDF file in email - https://www.geeksforgeeks.org/how-to-create-pdf-document-in-node-js/
-  - functionality done
-  - NOW we need to make it nice
-
-Summarize of what needs to be done:
+  - functionality DONE
 - add social icons on the home page or on the individual trade page - DONE
-- add comments, add proffesions, add trades
-- add more info for individual proffesions(as well start date - dynamically using Date.now(), course duration...)
-- backround image for cart page
-- style PDF that is sent, add nessesary information in the PDF
-- check responsivnes
-- add button to change background colors - day/night
-- test sending emails on my real test accounts
+- add comments, add professions, add trades - DONE
