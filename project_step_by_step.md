@@ -362,49 +362,66 @@ FRONTEND
   - public for static files(css, images)
   - views for ejs rendering HTML pages
   
-Login View
+Login View - "/login"
 - validation functionality implemented via auth.js function
 - view visible for visitors that are not logged in, once visitor is logged in, if he tries to access login route in browser URL adding "/login" he will be redirected to "/home" route
 
-Registration View
+Registration View - "/register"
 - validation functionality implemented via auth.js function
+- once visitor register, email will be sent with URL containing registration token, once visitor goes on that URL he needs to confirm email and password
 - view visible for visitors that are not logged in, once visitor is logged in, if he tries to access register route in browser URL adding "/register" he will be redirected to "/home" route
 
-Contact View
+Contact View - "/contact"
 - visible to all visitors(logged in or not logged in)
 - visitor can send a message and it will be sent to my mailtrap testing account
 - google location added
   - https://extension.umaine.edu/plugged-in/technology-marketing-communications/web/tips-for-web-managers/embed-map/
+- social icons added
 
-Home View
-- visitors that are not logged in will not be able to see list of all businesses and can't access "See Info" and "See professions" buttons
+Home View - "/home"
+- visitors that are not logged in will not be able to see list of all businesses and can't access "See Info" and "See professions" buttons/routes
   - once logged in visitor has access to mentioned features above
 
-Trade View Info
+Trade View Info - "/trade/:tradeID
 - visible only to visitors that are logged in
 - stars for rating are based on calculation of average rating stored in Trade model under avarageRating field which is calculated and added by the functionality implemented in the Review model once the review is submitted
 - if the visitor already posted the review for trade the form for posting review will not be visible for that user
 
-Profession View Info
+Profession View Info - "/trade/:tradeID/proffesions
 - visible only to visitors that are logged in
 - displays all classes/professions available under specific trade
 - profession can be added to the cart
 
+Cart View - "/cart"
+- visible only to visitors that are logged in
+- displays items currently in the cart, they can be added/removed
+- visitor can complete the payment -> email with PDF attachment will be sent containing all purchased items info
+
+Api View - "/api"
+- visible to all visitors(logged in or not logged in)
+- displays Postman documentation for REST API functionality
+
+Landing Page View - "/"
+- visitors that are logged in will only see a background image
+- visitors that are not logged in will have an option to login or register
+
 Summarize of what needs to be done:
+- add logo to header
+- fix landing page once visitor is logged in as it only displays background image
 - add button for devs somewhere(API Docs) which will redirect to "/api" documentation
 - fix CSP policy for font awesome - at the moment helmet() is commented out - causes font awesome icons not to show up
 - add more info for individual professions(as well start date - dynamically using Date.now(), course duration...)
 - background image for cart page
-- style PDF that is sent, add necessary information in the PDF
+- style PDF that is sent also add necessary information from the DB in the PDF
 - check responsiveness
 - add button to change background colors - day/night
-- test sending emails on my real test accounts
+- test sending emails on my real test accounts, switch mailtrap SMTP to gmail SMTP
 - check posting reviews functionality
   - only visitor that did not post review will have form visible
   - owner or admin can not publish reviews - needs to be fixed(at the moment owner can add review)
   - admin can modify reviews only through API 
 
-DONE ASSIGNMENTS
+DONE ASSIGNMENTS AND FIXES
 - fix the about page - DONE REMOVED
 - maybe change photo for on info page for trade, add more info so the footer will be lower - FIXED
 - add more comments - DONE
