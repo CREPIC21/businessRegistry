@@ -32,26 +32,42 @@ exports.getCart = asyncHandler( async(req, res, next) => {
 })
 
 exports.postCart = asyncHandler ( async (req, res, next) => {
+    // getting name, surname and email from cart form
     const firstName = req.body.firstname;
     const lastName = req.body.lastname;
     const email = req.body.emailaddress;
 
     const user = await User.findOne({email: req.session.username});
+    // getting items from shopping cart
+    const purchasedCartItems = user.shoppingCart.sort();
+    // getting total amount cost
+    const totalCostAmount = user.totalCost;
+    // creating an organized object from purchased items
+    let shoppingItems = {};
+    purchasedCartItems.forEach((item) => {
+        shoppingItems[item] = (shoppingItems[item] || 0) + 1;
+    });
+
+    // console.log(shoppingItems);
+
+    // creating a message that include purchased classes with their quantity
+    let classesMessage = createMessage(shoppingItems);
+    // console.log(classesMessage);
 
     let emailMessage = `
     
     Dear ${firstName} ${lastName}, this is your confirmation of purchased classes. Please find all the information below:
 
-    Cooking class starts on: 12.12.2022 and finishes on 26.12.2022. 
-
+    ${classesMessage} 
     Classes are held Monday to Friday from 18:00 - 22:00.
 
-    Total amount paid: $1000.00.
+    Total amount paid: $ ${totalCostAmount}.
 
     Your confirmation code: 91849083948
     
-    Your bar code:`;
+    Your QR code:`;
 
+    // creating PDF document confirmation that will be sent in the email
     const doc = new PDFDocument();
     doc.pipe(fs.createWriteStream('example.pdf'));
     doc.fontSize(18);
@@ -59,7 +75,7 @@ exports.postCart = asyncHandler ( async (req, res, next) => {
     doc.font('Times-Roman').text(emailMessage, {
         align: 'center'
     });
-    doc.image('bar_codes/Capture.JPG', (doc.page.width - 343) /2); // centering the image in PDF
+    doc.image('bar_codes/qr.JPG', (doc.page.width - 214) /2); // centering the image in PDF
     doc.end();
 
     await sendEmail({
@@ -69,7 +85,7 @@ exports.postCart = asyncHandler ( async (req, res, next) => {
         // email_reciever: req.body.email,
 
         subject: 'Payment Confirmation',
-        message: `Confirmation attached as pdf to this message`,
+        message: `Please find the payment confirmation and all information about your purchased classes attached as a PDF document to this message.\n\nKind Regards,\nBusiness Registry`,
         files: [
             {
                 filename: 'example.pdf',
@@ -81,9 +97,20 @@ exports.postCart = asyncHandler ( async (req, res, next) => {
     messageSent =  true;
     req.flash('msg1', `Payment completed. Check your email for confirmation.`);
 
+    // once purchase is success and email is sent we are reseting cost and shopping cart for the user
     user.totalCost = 0;
     user.shoppingCart = [];
     await user.save();
 
     return res.redirect('/cart');
 });
+
+// function that will take an object of purchased items and create a message to be injected in the email
+function createMessage(obj) {
+    let message = "";
+    for (let item in obj) {
+        message += `${item} - items purchased: ${obj[item]}\n`
+    }
+    // console.log(message);
+    return message;
+}

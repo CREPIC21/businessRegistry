@@ -412,14 +412,10 @@ Summarize of what needs to be done:
 - fix CSP policy for font awesome - at the moment helmet() is commented out - causes font awesome icons not to show up
 - add more info for individual professions(as well start date - dynamically using Date.now(), course duration...)
 - background image for cart page
-- style PDF that is sent also add necessary information from the DB in the PDF
 - check responsiveness
 - add button to change background colors - day/night
 - test sending emails on my real test accounts, switch mailtrap SMTP to gmail SMTP
-- check posting reviews functionality
-  - only visitor that did not post review will have form visible
-  - owner or admin can not publish reviews - needs to be fixed(at the moment owner can add review)
-  - admin can modify reviews only through API 
+- add different background image for the landing page on mobiles - text not visible with current image
 
 DONE ASSIGNMENTS AND FIXES
 - fix the about page - DONE REMOVED
@@ -440,3 +436,9 @@ DONE ASSIGNMENTS AND FIXES
   - functionality DONE
 - add social icons on the home page or on the individual trade page - DONE
 - add comments, add professions, add trades - DONE
+- check posting reviews functionality - DONE
+  - only visitor that did not post review will have form visible - CHECKED/FIXED
+  - owner or admin can not publish reviews - needs to be fixed(at the moment owner can add review) - FIXED
+  - admin can modify reviews only through API, not UI - DONE/FIXED
+- style PDF that is sent also add necessary information from the DB in the PDF - DONE
+- added QR code to PDF sent via email

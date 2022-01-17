@@ -11,16 +11,17 @@ exports.getTrade = asyncHandler( async(req, res, next) => {
         const reviewResults = await Review.find({trade: req.params.id});
         let reviews = [];
     
-        let sessionUser = await User.findOne({ email: req.session.username}, 'name');
+        let sessionUser = await User.findOne({ email: req.session.username});
         let userAlreadyCommented = false;
+        console.log(`printing session user ${sessionUser}`);
     
             // getting names of author reviews
             for(let i =0; i < reviewResults.length; i++) {
                 const userResult = await User.findOne({_id: reviewResults[i].userID}, 'name');
-                console.log(userResult)
+                console.log(`printing authors ${userResult}`)
     
                 // checking if the current user already posted the comment, if he did the form to post comment will not be visible for that user
-                if(userResult.name === sessionUser.name) {
+                if(userResult.name === sessionUser.name || sessionUser.userRole === 'publisher' || sessionUser.userRole === 'admin') {
                     userAlreadyCommented = true;
                 }
     
