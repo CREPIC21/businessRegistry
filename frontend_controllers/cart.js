@@ -8,8 +8,8 @@ const paypal = require('paypal-rest-sdk');
 
 paypal.configure({
     'mode': 'sandbox', //sandbox or live
-    'client_id': 'AcPAEBSy6BwpZqGw-KRRe0IQRWiZxcLf4tS4KQLeHGr8tgDjVM5hFYxq5pHdpV0p_5w_DlgETFa23NTh',
-    'client_secret': 'EHaYvRdOAarFX-dPXi8ErJadOX2exfEikXiE_7UQ8VjpOJl_lgnTQLusmBV34DacKNfEZ2iCWdNiq0rn'
+    'client_id': process.env.PAY_PAL_CLIENT_ID,
+    'client_secret': process.env.PAY_PAL_CLIENT_SECRET
   });
 
 // Cart view page
