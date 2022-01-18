@@ -26,18 +26,23 @@
     </div>
     <div class="child-grid-container">
       <!-- <label for="firstname" class="item1">First name:</label> -->
-      <input type="text" id="firstname" name="firstname" value="" required class="item2" placeholder="First name">
+      <!-- <input type="text" id="firstname" name="firstname" value="" required class="item2" placeholder="First name"> -->
       <!-- <label for="lastname" class="item3">Last name:</label> -->
-      <input type="text" id="lastname" name="lastname" value="" required class="item4" placeholder="Last name">
+      <!-- <input type="text" id="lastname" name="lastname" value="" required class="item4" placeholder="Last name"> -->
       <!-- <label for="emailaddress" class="item5">Email address:</label> -->
-      <input type="email" id="emailaddress" name="emailaddress" value="" required class="item6" placeholder="Email address">
+      <!-- <input type="email" id="emailaddress" name="emailaddress" value="" required class="item6" placeholder="Email address"> -->
       <!-- <label for="cardnumber"class="item7">Card Number:</label> -->
-      <input type="text" id="cardnumber" name="cardnumber" value="" required class="item8" placeholder="Card number">
+      <!-- <input type="text" id="cardnumber" name="cardnumber" value="" required class="item8" placeholder="Card number"> -->
       <!-- <label for="cvv" class="item9"></label> -->
-      <input type="text" id="cvv" name="cvv" value="" required class="item10" placeholder="CVV">
+      <!-- <input type="text" id="cvv" name="cvv" value="" required class="item10" placeholder="CVV"> -->
       <!-- <label for="expirydate" class="item11">Expiry Date</label> -->
-      <input type="text" id="expirydate" name="expirydate" value="" required class="item12" placeholder="dd/mm/yyyy - expiry date"><br>
-      <input type="submit" value="Complete Payment" class="input-submit-btn item13">
+      <!-- <input type="text" id="expirydate" name="expirydate" value="" required class="item12" placeholder="dd/mm/yyyy - expiry date"><br> -->
+      <% if (Object.keys(cartItems).length !== 0) { %>
+      <input type="submit" value="Pay by PayPal" class="input-submit-btn item13">
+      </div>
+      <%} else { %>
+      <input type="submit" value="Pay by PayPal" class="input-submit-btn item13" style="display: none;">
+      <% } %>
     </div>  
   </div>
   </form>

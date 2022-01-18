@@ -68,6 +68,8 @@ const addCartItem = require('./frontend_routes/utils/addCartItem');
 const addItemToCartBtn = require('./frontend_routes/utils/addItemToCart');
 const authFrontend = require('./frontend_routes/utils/auth');
 
+// const payPalRoute = require('./frontend_routes/pay');
+
 // Initialize the app
 const app = express();
 
@@ -154,6 +156,8 @@ app.use('/removeitem', removeCartItem);
 app.use('/additem', addCartItem);
 app.use('/addToCart', addItemToCartBtn);
 app.use('/auth', authFrontend);
+
+// app.use('/pay', payPalRoute);
 
 
 /* IMPORTANT */
