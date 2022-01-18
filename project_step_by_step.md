@@ -405,6 +405,16 @@ Landing Page View - "/"
 - visitors that are logged in will only see a background image
 - visitors that are not logged in will have an option to login or register
 
+PayPal payment functionality
+- created accounts on:
+  - https://developer.paypal.com/developer/accounts
+  - https://www.sandbox.paypal.com/myaccount/summary
+- created routes and functionality for payment in cart route
+  - if there is no items in the cart payment button will not be shown
+  - once visitor clicks on PayPal button he will be redirected to PayPal login confirmation, once credentials are confirmed user can continue with the purchase and pay
+  - once payment confirmed visitor is redirected back to cart which is now empty and flash message is displayed to check email for confirmation
+  - if payment is not succesfull visitor will be redirected back to cart where nothing changed
+
 Summarize of what needs to be done:
 - add logo to header
 - fix landing page once visitor is logged in as it only displays background image
