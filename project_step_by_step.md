@@ -453,7 +453,7 @@ DONE ASSIGNMENTS AND FIXES
 - style PDF that is sent also add necessary information from the DB in the PDF - DONE
 - added QR code to PDF sent via email - DONE
 - background image for cart page - DONE
-- - add different background image for the landing page on mobiles - text not visible with current image - DONE
+- add different background image for the landing page on mobiles - text not visible with current image - DONE
 
 UPDATING THE APP ON SERVER BY USING PULL
 - git pull https://github.com/CREPIC21/businessregistry.git
