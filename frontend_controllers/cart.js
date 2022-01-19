@@ -186,7 +186,7 @@ exports.paymentSuccess = asyncHandler(async (req, res, next ) => {
         "transactions": [{
             "amount": {
                 "currency": "USD",
-                "total": "25.00"
+                "total": "5.00"
             }
         }]
     }
