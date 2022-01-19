@@ -452,3 +452,24 @@ DONE ASSIGNMENTS AND FIXES
   - admin can modify reviews only through API, not UI - DONE/FIXED
 - style PDF that is sent also add necessary information from the DB in the PDF - DONE
 - added QR code to PDF sent via email
+
+UPDATING THE APP ON SERVER BY USING PULL
+- git pull https://github.com/CREPIC21/businessregistry.git
+- once we pull the updates we have to restart pm2 and nginx 
+  - IMPORTANT - run "npm install" for all new modules installed on our local machine and pushed to GitHub, otherwise the website will not work
+    - nginx will return 504 Bad Gateway
+    - commands for debugging:
+      - pm2 logs
+      - tail -f /var/log/nginx/error.log
+      - https://pm2.keymetrics.io/docs/usage/quick-start/
+      - https://www.digitalocean.com/community/questions/502-bad-gateway-nginx-2?answer=62972
+  - service nginx restart
+	- pm2 restart server
+
+DOCGEN
+- docgen command to create index.html file from Postman document API:
+  - ./docgen build -i dc.postman_collection.json -o index.html
+
+  GITHUB
+- changing SSH key passphrase
+  - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases

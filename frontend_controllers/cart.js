@@ -139,22 +139,22 @@ exports.pay = asyncHandler(async (req, res, next) => {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://localhost:5000/cart/success",
-            "cancel_url": "http://localhost:5000/cart/cancel"
+            "return_url": "http://businessregistry.xyz/cart/success",
+            "cancel_url": "http://businessregistry.xyz/cart/cancel"
         },
         "transactions": [{
             "item_list": {
                 "items": [{
-                    "name": "Hat",
+                    "name": "Item",
                     "sku": "001",
-                    "price": "25.00",
+                    "price": "5.00",
                     "currency": "USD",
                     "quantity": 1
                 }]
             },
             "amount": {
                 "currency": "USD",
-                "total": "25.00"
+                "total": "5.00"
             },
             "description": "Hat hat hat."
         }]
