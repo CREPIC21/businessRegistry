@@ -414,6 +414,7 @@ PayPal payment functionality
   - once visitor clicks on PayPal button he will be redirected to PayPal login confirmation, once credentials are confirmed user can continue with the purchase and pay
   - once payment confirmed visitor is redirected back to cart which is now empty and flash message is displayed to check email for confirmation
   - if payment is not succesfull visitor will be redirected back to cart where nothing changed
+  - total amount in create_payment_json needs to match with total amount in execute_payment_json - if they don't match there will be errors after accepting and completing the payment
 
 Summarize of what needs to be done:
 - add logo to header
@@ -421,11 +422,10 @@ Summarize of what needs to be done:
 - add button for devs somewhere(API Docs) which will redirect to "/api" documentation
 - fix CSP policy for font awesome - at the moment helmet() is commented out - causes font awesome icons not to show up
 - add more info for individual professions(as well start date - dynamically using Date.now(), course duration...)
-- background image for cart page
-- check responsiveness
+- check responsiveness - IN PROGRESS
 - add button to change background colors - day/night
 - test sending emails on my real test accounts, switch mailtrap SMTP to gmail SMTP
-- add different background image for the landing page on mobiles - text not visible with current image
+- fix the data send via PayPal to match data in the cart - for now PayPal cart data are hardcoded
 
 DONE ASSIGNMENTS AND FIXES
 - fix the about page - DONE REMOVED
@@ -451,13 +451,14 @@ DONE ASSIGNMENTS AND FIXES
   - owner or admin can not publish reviews - needs to be fixed(at the moment owner can add review) - FIXED
   - admin can modify reviews only through API, not UI - DONE/FIXED
 - style PDF that is sent also add necessary information from the DB in the PDF - DONE
-- added QR code to PDF sent via email
+- added QR code to PDF sent via email - DONE
+- background image for cart page - DONE
+- - add different background image for the landing page on mobiles - text not visible with current image - DONE
 
 UPDATING THE APP ON SERVER BY USING PULL
 - git pull https://github.com/CREPIC21/businessregistry.git
 - once we pull the updates we have to restart pm2 and nginx 
-  - IMPORTANT - run "npm install" for all new modules installed on our local machine and pushed to GitHub, otherwise the website will not work
-    - nginx will return 504 Bad Gateway
+  - IMPORTANT - run "npm install" for all new modules installed on our local repository and pushed to GitHub, otherwise the website will not work - nginx will return 504 Bad Gateway
     - commands for debugging:
       - pm2 logs
       - tail -f /var/log/nginx/error.log

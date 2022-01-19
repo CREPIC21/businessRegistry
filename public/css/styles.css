@@ -47,7 +47,7 @@ body {
 }
 
 .landing-image {
-    background: url("/uploads/landing-small.jpg");
+    background: url("/uploads/landing-small-2.jpg");
     width: 100%;
     height: 84vh;
     background-repeat: no-repeat;
@@ -392,7 +392,7 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
 }
 
 .form-image {
-    background: url("/uploads/test-small.jpg");
+    background: url("/uploads/letter-small.jpg");
     width: 100%;
     height: 300px;
     background-repeat: no-repeat;
@@ -490,6 +490,17 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+/* Cart Image */
+.cart-image {
+    background: url("/uploads/cart-small.jpg");
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
 }
 
  /* Proffesions Page */
@@ -763,9 +774,9 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
     }
 
     .form-image {
-        background: url("/uploads/post-med.jpg");
+        background: url("/uploads/letter-large.jpg");
         width: 100%;
-        height: 305px;
+        height: 370px;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -794,6 +805,17 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+    }
+
+    /* Cart Image */
+    .cart-image {
+        background: url("/uploads/cart-large.jpg");
+        width: 100%;
+        height: 475px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.6;
     }
 
     /* Comment form */
