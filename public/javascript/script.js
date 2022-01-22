@@ -55,6 +55,12 @@ headerBtns.forEach((btn, index) => {
     } else {
         btn.classList.remove('on-click-a');
     }
+    // checking if we are on the contact page, if we are then we are changing contact route to home route in footer links
+    if(pathname === "/contact") {
+        let footerContactLink = document.querySelector(".footer-contact-link");
+        footerContactLink.href = "/home";
+        footerContactLink.innerHTML = "Home";
+    }
 })
 
 

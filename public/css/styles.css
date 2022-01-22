@@ -43,7 +43,7 @@ body {
     /* background-color: var(--lightblack); */
     background-image: linear-gradient(to right, #3d3d3d, #2c3e50);
     position: relative;
-    padding-bottom: 66px;
+    padding-bottom: 160px;
     min-height: 100vh;
 }
 
@@ -87,7 +87,7 @@ div.grid-item-form a.register-btn-home {
 
 header {
     /* background-color: var(--black); */
-    background-image: linear-gradient(to right, #2c2c2c, #233241);
+    background-image: linear-gradient(to right, rgb(44, 44, 44), rgb(35, 50, 65));
     text-align: center;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -141,6 +141,49 @@ footer {
 
 .footer-paragraph {
     padding-bottom: 0;
+}
+
+footer form input {
+    background-color: inherit;
+    border: 1px solid var(--black);
+    padding: 0.5rem;
+    width: 50%;
+    color: var(--gray);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer form button {
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    padding: 0.5rem;
+    width: 50%;
+    color: var(--gray);
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+footer form button:hover {
+    color: var(--red);
+}
+
+footer form input:focus {
+    outline: none;
+}
+
+footer a {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--gray);
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* Home Page */
@@ -868,6 +911,22 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
 
     .add-to-cart-btn {
         width: 30%;
+    }
+
+    /* Footer */
+    footer form input {
+        padding: 0.5rem;
+        width: 13%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    footer form button {
+        padding: 0.5rem;
+        width: 10%;
+        display: inline;
+        margin-left: 0;
+        margin-right: 0;
     }
   }
 
