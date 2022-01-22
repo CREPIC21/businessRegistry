@@ -40,7 +40,8 @@ appearance: none;
 }
 
 body {
-    background-color: var(--lightblack);
+    /* background-color: var(--lightblack); */
+    background-image: linear-gradient(to right, #3d3d3d, #2c3e50);
     position: relative;
     padding-bottom: 66px;
     min-height: 100vh;
@@ -85,7 +86,8 @@ div.grid-item-form a.register-btn-home {
 }
 
 header {
-    background-color: var(--black);
+    /* background-color: var(--black); */
+    background-image: linear-gradient(to right, #2c2c2c, #233241);
     text-align: center;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -103,12 +105,13 @@ header a {
 
 header a:hover {
     color: var(--red);
-    background-color: var(--lightblack);
+    /* background-color: var(--lightblack); */
+    background-color: #2c3e50;
 }
 
 .on-click-a {
     color: var(--red);
-    background-color: var(--lightblack);
+    background-color: #2c3e50;
 }
 
 .cart-btn-disable {
@@ -127,7 +130,8 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: var(--black);
+    /* background-color: var(--black); */
+    background-image: linear-gradient(to right, #222222, #1c2835);
     color: #EEEEEE;
     text-align: center;
     padding-top: 1.5rem;
@@ -150,7 +154,8 @@ section {
 section a {
     color: var(--gray);
     text-decoration: none;
-    background-color: var(--lightblack);
+    /* background-color: var(--lightblack); */
+    background-image: linear-gradient(to right, #3d3d3d, #2c3e50);
     border-radius: 0.5rem;
     font-size: 0.8rem;
     padding-right: 2rem;
@@ -162,7 +167,8 @@ section a {
 }
 
 section a:hover, .comment-form-container input.new-comment-btn:hover {
-    background-color: var(--black);
+    /* background-color: var(--black); */
+    background-image: linear-gradient(to right, #000000, #434343);
     color: var(--red);
 }
 
@@ -175,7 +181,8 @@ section a:hover, .comment-form-container input.new-comment-btn:hover {
 }
 
 .grid-item {
-    background-color: rgba(255,0,0,0.8);
+    /* background-color: rgba(255,0,0,0.8); */
+    background-image: linear-gradient(to right, #333333, #dd1818);
     padding-top: 0.7rem;
     padding-bottom: 0.9rem;
     border-radius: 0.9rem;
@@ -320,7 +327,8 @@ section a:hover, .comment-form-container input.new-comment-btn:hover {
 
 .comment-form-container input.new-comment-btn {
     display: block;
-    background-color: var(--lightblack);
+    /* background-color: var(--lightblack); */
+    background-color: inherit;
     border: 2px solid var(--black);
     border-radius: 0;
     cursor: pointer;
@@ -334,7 +342,8 @@ section a:hover, .comment-form-container input.new-comment-btn:hover {
 
 textarea.new-comment-textarea {
     border: 2px solid var(--black);
-    background-color: var(--lightblack);
+    /* background-color: var(--lightblack); */
+    background-color: inherit;
     padding: 0.3rem;
     color: var(--gray);
     display: block;
@@ -424,7 +433,8 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
 
 .grid-item-form input, .comment-form-container input {
     border: none;
-    background-color: var(--lightblack);
+    /* background-color: var(--lightblack); */
+    background-color: inherit;
     border-bottom: 2px solid var(--black);
     border-radius: 0;
     color: var(--gray);
@@ -433,7 +443,8 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
 
 .grid-item-form textarea {
     border: 2px solid var(--black);
-    background-color: var(--lightblack);
+    /* background-color: var(--lightblack); */
+    background-color: inherit;
     margin-bottom: 40px;
     padding: 0.3rem;
     color: var(--gray);
@@ -453,7 +464,8 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
 }
 
 .grid-item-form input.input-submit-btn:hover, .grid-item-form a.register-btn:hover {
-    background-color: var(--black);
+    /* background-color: var(--black); */
+    background-image: linear-gradient(to right, #000000, #434343);
     color: var(--red);
 }
 
@@ -479,7 +491,8 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
     text-align: center;
     text-decoration: none;
     color: var(--gray);
-    background-color: var(--lightblack);
+    /* background-color: var(--lightblack); */
+    background-color: inherit;
 }
 
 /* Register Page */
@@ -601,6 +614,7 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
 .child-grid-container input {
     border: none;
     background-color: var(--black);
+    /* background-image: linear-gradient(to right, #000000, #434343); */
     padding: 0.6rem;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
@@ -610,6 +624,9 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
 }
 
 .cart-container input:hover {
+    /* background-image: linear-gradient(to right, #3d3d3d, #2c3e50); */
+    /* background-image: linear-gradient(to right, #000000, #434343); */
+    background-color: rgba(0, 0, 0, 0.9);
     color: var(--red);
 }
 
@@ -630,6 +647,11 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
     background-color: var(--gray);
     color: var(--black);
     opacity: 0.8;
+}
+
+/* Landing Page */
+.landing-page-btn {
+    background-color: var(--lightblack) !important;
 }
 
 @media (max-width: 1050px) and (min-width: 750px) {
