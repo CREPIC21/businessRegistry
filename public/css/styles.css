@@ -43,7 +43,7 @@ body {
     /* background-color: var(--lightblack); */
     background-image: linear-gradient(to right, #3d3d3d, #2c3e50);
     position: relative;
-    padding-bottom: 160px;
+    padding-bottom: 152px;
     min-height: 100vh;
 }
 
