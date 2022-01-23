@@ -419,13 +419,13 @@ PayPal payment functionality
 Summarize of what needs to be done:
 - add logo to header
 - fix landing page once visitor is logged in as it only displays background image
-- add button for devs somewhere(API Docs) which will redirect to "/api" documentation
 - fix CSP policy for font awesome - at the moment helmet() is commented out - causes font awesome icons not to show up
 - add more info for individual professions(as well start date - dynamically using Date.now(), course duration...)
 - check responsiveness - IN PROGRESS
 - add button to change background colors - day/night
 - test sending emails on my real test accounts, switch mailtrap SMTP to gmail SMTP
 - fix the data send via PayPal to match data in the cart - for now PayPal cart data are hardcoded
+- add functionality to subscribe btn in footer
 
 DONE ASSIGNMENTS AND FIXES
 - fix the about page - DONE REMOVED
@@ -454,6 +454,8 @@ DONE ASSIGNMENTS AND FIXES
 - added QR code to PDF sent via email - DONE
 - background image for cart page - DONE
 - add different background image for the landing page on mobiles - text not visible with current image - DONE
+- add button for devs somewhere(API Docs) which will redirect to "/api" documentation - DONE
+- added links to footer for contact page and API docs page, as well added input and button for subscription - DONE
 
 UPDATING THE APP ON SERVER BY USING PULL
 - git pull https://github.com/CREPIC21/businessregistry.git

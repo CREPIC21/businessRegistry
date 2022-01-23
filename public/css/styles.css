@@ -43,7 +43,7 @@ body {
     /* background-color: var(--lightblack); */
     background-image: linear-gradient(to right, #3d3d3d, #2c3e50);
     position: relative;
-    padding-bottom: 152px;
+    padding-bottom: 202px;
     min-height: 100vh;
 }
 
@@ -745,6 +745,10 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
 }
 
 @media (min-width: 768px) {
+
+    body {
+        padding-bottom: 152px;
+    }
     /* For desktop: */
     .landing-image {
         background: url("/uploads/landing-large.jpg");
