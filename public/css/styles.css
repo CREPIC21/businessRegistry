@@ -47,6 +47,27 @@ body {
     min-height: 100vh;
 }
 
+.logo-img {
+    display: none;
+    background: url("/uploads/logo_edited.jpg");
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 7px;
+    left: 120px;
+    border-radius: 5px;
+    opacity: 0.9;
+    transform: scale(1, 1);
+    transition: transform 0.4s ease-out;
+}
+
+.logo-img:hover {
+    transform: scale(1.2, 1.2);
+}
+
 .landing-image {
     background: url("/uploads/landing-small-2.jpg");
     width: 100%;
@@ -757,6 +778,10 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+    }
+
+    .logo-img {
+        display: block;
     }
 
     .landing-image h3 {
