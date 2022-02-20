@@ -476,3 +476,8 @@ DOCGEN
   GITHUB
 - changing SSH key passphrase
   - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases
+- commands to commit changes to github:
+  - git status
+  - git add .
+  - git commit -m <message>
+  - git push origin main
