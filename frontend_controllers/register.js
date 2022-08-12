@@ -40,7 +40,7 @@ exports.postRegister = asyncHandler( async(req, res, next) => {
             await sendEmail({
                 email: `${process.env.FROM_NAME} <${process.env.FROM_EMAIL}`,
                 subject: 'Business Registry - Registration Confirmation',
-                message: `Confirm your registration by clicking on the following link http://localhost:5000/confirmregistration/${token}`
+                message: `Confirm your registration by clicking on the following link https://businessregistry.herokuapp.com/confirmregistration/${token}`
             });
             messageSent =  true;
             req.flash('msg1', `Thank you for registering. Your confirmation email is on the way. Check your mail.`);
