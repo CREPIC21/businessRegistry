@@ -1,49 +1,60 @@
 <%- include('partials/header'); -%>
 
-<% if (user) { %>
-  <a href="/logout">Logout</a>
-  <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
-<%} else { %>
-  <a href="/login">Login</a>
-  <a href="/cart" class="cart-btn-disable"><i class="fas fa-shopping-cart"></i></a>
-<% } %>
-</header>
+  <% if (user) { %>
+    <a href="/logout">Logout</a>
+    <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+    <%} else { %>
+      <a href="/login">Login</a>
+      <a href="/cart" class="cart-btn-disable"><i class="fas fa-shopping-cart"></i></a>
+      <% } %>
+        </header>
 
-<div class="form-image" loading="lazy"></div>
+        <div class="form-image" loading="lazy"></div>
 
-<div class="contact-container">
-<form action="/contact" method="POST" class="form-container" id="contact-form" autocomplete="off">
-  <% Object.values(errors).forEach(function(value){ %>
-  <% if (value.includes('not')) { %>
-  <h1 style="color: red; padding-bottom: 10px; font-size: 1.3rem; margin-bottom: 0.4rem; text-align: center;"><%= errors %></h1>
-  <%} else { %>
-  <h1 style="color: green; padding-bottom: 10px; font-size: 1.3rem; margin-bottom: 0.4rem; text-align: center;"><%= errors %></h1>
-  <% } %>
-  <% }); %>
-  <div class="grid-item-form">
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" autocomplete="nope" value="" required><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" autocomplete="nada" value="" required><br>
-    <label for="email">Your email:</label><br>
-    <input type="email" id="email" name="email" autocomplete="email" value="" required><br><br>
-    <label for="message">Your message:</label><br>
-    <textarea form="contact-form" name="message" id="message" autocomplete="off" rows="7" cols="30" required></textarea>
-    <input type="submit" value="Send Message" class="input-submit-btn">
-  </div>    
-  </form>
-  <div class="my-contact-info-container">
-    <h3>
-      <span class="span-company-name">Company:</span> Danijel Crepic Development
-      <a href="https://github.com/CREPIC21?tab=repositories" target="_blank"><i class="fab fa-github-square"></i></a>
-      <a href="https://www.linkedin.com/in/danijelcrepic/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.facebook.com/danijel.crepic" target="_blank"><i class="fab fa-facebook-square"></i></a>
-    </h3>
-    <p><span>Email:</span> crepic21@gmail.com </p>
-    <p><span>Phone:</span> +48 886 765 567 </p>
-    <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d74531.80484518674!2d18.27020310697874!3d54.28416308492148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd9cc39c117f21%3A0xad5402f2d41d6e77!2sDworska%2086%2C%2083-330!5e0!3m2!1sen!2spl!4v1641900401001!5m2!1sen!2spl" loading="lazy"></iframe>
-  </div>
+        <div class="contact-container">
+          <form action="/contact" method="POST" class="form-container" id="contact-form" autocomplete="off">
+            <% Object.values(errors).forEach(function(value){ %>
+              <% if (value.includes('not')) { %>
+                <h1
+                  style="color: red; padding-bottom: 10px; font-size: 1.3rem; margin-bottom: 0.4rem; text-align: center;">
+                  <%= errors %>
+                </h1>
+                <%} else { %>
+                  <h1
+                    style="color: green; padding-bottom: 10px; font-size: 1.3rem; margin-bottom: 0.4rem; text-align: center;">
+                    <%= errors %>
+                  </h1>
+                  <% } %>
+                    <% }); %>
+                      <div class="grid-item-form">
+                        <label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname" autocomplete="nope" value="" required><br>
+                        <label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname" autocomplete="nada" value="" required><br>
+                        <label for="email">Your email:</label><br>
+                        <input type="email" id="email" name="email" autocomplete="email" value="" required><br><br>
+                        <label for="message">Your message:</label><br>
+                        <textarea form="contact-form" name="message" id="message" autocomplete="off" rows="7" cols="30"
+                          required></textarea>
+                        <input type="submit" value="Send Message" class="input-submit-btn">
+                      </div>
+          </form>
+          <div class="my-contact-info-container">
+            <h3>
+              <span class="span-company-name">Company:</span> Danijel Crepic Development
+              <a href="https://github.com/CREPIC21?tab=repositories" target="_blank"><i
+                  class="fab fa-github-square"></i></a>
+              <a href="https://www.linkedin.com/in/danijelcrepic/" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.facebook.com/danijel.crepic" target="_blank"><i
+                  class="fab fa-facebook-square"></i></a>
+            </h3>
+            <p><span>Email:</span> contact@businessregistry.xyz </p>
+            <p><span>Phone:</span> +48 886 765 567 </p>
+            <iframe class="google-map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d74531.80484518674!2d18.27020310697874!3d54.28416308492148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd9cc39c117f21%3A0xad5402f2d41d6e77!2sDworska%2086%2C%2083-330!5e0!3m2!1sen!2spl!4v1641900401001!5m2!1sen!2spl"
+              loading="lazy"></iframe>
+          </div>
 
-</div>
+        </div>
 
-<%- include('partials/footer'); -%>
+        <%- include('partials/footer'); -%>
