@@ -1,13 +1,38 @@
 <footer>
+    <p class="invalid-subscription-email">Invalid Email.</p>
+    <p class="email-subscribed">Subscribed.</p>
     <p class="footer-paragraph">&copy; 2022 Danijel Crepic Development</p>
-    <form>
-        <input type="text" placeholder="email address" required>
-        <button type="submit">Subscribe</button>
-    </form>
+    <div class="subscription-area">
+        <input type="email" id="subscriptionemail" name="subscriptionemail" placeholder="email address" required>
+        <a id="subscription-anchor-tag" onclick="setHref()" style="text-decoration: none;">Subscribe</a>
+    </div>
     <a href="/contact" class="footer-contact-link">Contact</a>
     <a href="/api" target="_blank">API Documentation</a>
 </footer>
 
 <script type="text/javascript" src="/javascript/script.js"></script>
+<script type="text/javascript">
+    function setHref() {
+        let inputValue = document.getElementById('subscriptionemail');
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputValue.value)) {
+            let subscriptionAnchorTag = document.getElementById("subscription-anchor-tag");
+            subscriptionAnchorTag.setAttribute("href", `/subscribed/${inputValue.value}`);
+            document.querySelector(".email-subscribed").style.display = "block";
+            inputValue.value = "";
+            setTimeout(function () {
+                document.querySelector(".email-subscribed").style.display = "none";
+                subscriptionAnchorTag.removeAttribute("href");
+            }, 2000);
+            console.log("Email sent")
+        } else {
+            // alert("You have entered an invalid email address!")
+            document.querySelector(".invalid-subscription-email").style.display = "block";
+            setTimeout(function () {
+                document.querySelector(".invalid-subscription-email").style.display = "none";
+            }, 2000);
+        }
+    }
+</script>
 </body>
+
 </html>

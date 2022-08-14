@@ -34,6 +34,7 @@ exports.protect = asyncHandler(async (req, res, next) => {
 
         console.log('From validate the token ', decoded);
 
+        // decoded object has an user id which we will use to find the user
         req.user = await User.findById(decoded.id);
 
         next();

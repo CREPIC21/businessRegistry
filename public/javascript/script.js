@@ -15,9 +15,9 @@ let pathname = window.location.pathname;
 console.log(addToCartBtns);
 addToCartBtns.forEach((btn) => {
     btn.addEventListener('click', function() {
-        console.log(btn.classList);
+        // console.log(btn.classList);
         let messageID = btn.classList[1];
-        console.log(messageID);
+        // console.log(messageID);
         // let addMessage = document.getElementById()
         let addMessage = document.getElementById(`id${messageID}`);
         addMessage.style.display = 'block';

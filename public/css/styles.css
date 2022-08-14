@@ -26,6 +26,10 @@ p {
     padding-bottom: 0.9rem;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 /* Prevent changing the backround color and text color when the browser suggests autofill */
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px var(--lightblack) inset;
@@ -174,6 +178,16 @@ footer form input {
     margin-bottom: 1rem;
 }
 
+footer div input {
+    background-color: inherit;
+    border: 1px solid var(--black);
+    padding: 0.5rem;
+    width: 10%;
+    color: var(--gray);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 footer form button {
     background-color: var(--black);
     border: 1px solid var(--black);
@@ -181,7 +195,18 @@ footer form button {
     width: 50%;
     color: var(--gray);
     cursor: pointer;
-    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+footer div a {
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    padding: 0.44rem;
+    width: 50%;
+    color: var(--gray);
+    cursor: pointer;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
@@ -192,6 +217,14 @@ footer form button:hover {
 }
 
 footer form input:focus {
+    outline: none;
+}
+
+footer div a:hover {
+    color: var(--red);
+}
+
+footer div input:focus {
     outline: none;
 }
 
@@ -715,6 +748,38 @@ textarea.new-comment-textarea:focus, .comment-form-container-item:focus, .commen
     background-color: var(--gray);
     color: var(--black);
     opacity: 0.8;
+}
+
+.invalid-subscription-email {
+    display: none;
+    color: red;
+    font-weight: border;
+    background-color: white;
+    width: 7%;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    right:0;
+    margin: auto;
+    opacity: 0.9;
+}
+
+.email-subscribed {
+    display: none;
+    color: black;
+    font-weight: border;
+    background-color: white;
+    width: 7%;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    right:0;
+    margin: auto;
+    opacity: 0.9;
 }
 
 /* Landing Page */

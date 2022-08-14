@@ -21,6 +21,6 @@ router.put('/updatedetails', protect, updateDetails);
 router.put('/updatepassword', protect, updatePassword);
 
 router.get('/me', protect, getMe);
-router.get('/logout', logout);
+router.get('/logout',protect, logout);
 
 module.exports = router;

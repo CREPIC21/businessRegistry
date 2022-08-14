@@ -424,7 +424,6 @@ Summarize of what needs to be done:
 - add radio button to change background colors - day/night
 - test sending emails on my real test accounts, switch mailtrap SMTP to gmail SMTP
 - fix the data send via PayPal to match data in the cart - for now PayPal cart data are hardcoded
-- add functionality to subscribe button in footer
 
 DONE ASSIGNMENTS AND FIXES
 - fix the about page - DONE REMOVED
@@ -456,6 +455,7 @@ DONE ASSIGNMENTS AND FIXES
 - add button for devs somewhere(API Docs) which will redirect to "/api" documentation - DONE
 - added links to footer for contact page and API docs page, as well added input and button for subscription - DONE
 - add logo to header - DONE
+- add functionality to subscribe button in footer, now when visitor subscribes, email is saved to google sheets using Sheety API - DONE
 
 UPDATING THE APP ON SERVER BY USING PULL
 - git pull https://github.com/CREPIC21/businessregistry.git

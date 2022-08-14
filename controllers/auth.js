@@ -58,7 +58,7 @@ exports.login = asyncHandler( async (req, res, next) => {
         return next(new ErrorResponse('Invalid credentials, email not found', 401));
     }
 
-    // Validation/check for password match -> comparing password entered by the user on login with password in DB
+    // Validation/check for password match -> comparing password entered by the user on login with password in DB, returns true or false
     const passMatch = await user.checkUserPassword(password);
     if(!passMatch) {
         return next(new ErrorResponse('Invalid credentials, invalid password', 401));
