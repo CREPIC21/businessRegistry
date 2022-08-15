@@ -1,35 +1,36 @@
 <%- include('partials/header'); -%>
 
-<% if (!user) { %>
-    <a href="/login">Login</a>
-    <a href="/cart" class="cart-btn-disable"><i class="fas fa-shopping-cart"></i></a>
-</header>
+    <% if (!user) { %>
+        <a href="/login">Login</a>
+        <a href="/cart" class="cart-btn-disable"><i class="fas fa-shopping-cart"></i></a>
+        </header>
 
-<div class="landing-image" loading="lazy">
-
-
-    <div class="grid-item-form">
-
-    <h3 class="error-h3">You want to learn how to bake cookies, mix coctails, sear the perfect steak, dance or just register your hospitality business then:</h3>
-    <a href="/login" class="register-btn landing-page-btn">Login Here</a>
-    <p class="login-paragraph">OR</p>
-    <a href="/register" class="register-btn landing-page-btn">Register Here</a>
+        <div class="landing-image" loading="lazy">
 
 
-    </div>
+            <div class="grid-item-form">
 
-</div>
-
-<%} else { %>
-    <a href="/logout">Logout</a>
-    <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
-</header>
-
-<div class="landing-image">
+                <h3 class="error-h3">You want to learn how to bake cookies, mix cocktails, sear the perfect steak, dance
+                    or just register your hospitality business, then:</h3>
+                <a href="/login" class="register-btn landing-page-btn">Login Here</a>
+                <p class="login-paragraph">OR</p>
+                <a href="/register" class="register-btn landing-page-btn">Register Here</a>
 
 
-</div>
+            </div>
 
- <% } %>
+        </div>
 
-<%- include('partials/footer'); -%>
+        <%} else { %>
+            <a href="/logout">Logout</a>
+            <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+            </header>
+
+            <div class="landing-image">
+
+
+            </div>
+
+            <% } %>
+
+                <%- include('partials/footer'); -%>

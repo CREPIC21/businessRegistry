@@ -1,67 +1,101 @@
 <%- include('partials/header'); -%>
 
-<% if (user) { %>
-    <a href="/logout">Logout</a>
-    <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
-<%} else { %>
-    <a href="/login">Login</a>
-<% } %>
-</header>
+    <% if (user) { %>
+        <a href="/logout">Logout</a>
+        <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+        <%} else { %>
+            <a href="/login">Login</a>
+            <% } %>
+                </header>
 
-    <div class="trade-image" loading="lazy">
-        <!-- <img src="uploads/contact-large.jpg" class="" alt=""> -->
-    </div>
-    <div class="trade-info-section">
-    <h2> <%= tradeToRender.name %> - <%= tradeToRender.businessType %></h2>
-    <p> <%= tradeToRender.description %> </p>
-    <p> <span>Website:</span> <%= tradeToRender.website %> </p>
-    <p> <span>Email:</span> <%= tradeToRender.email %> </p>
-    <p> <span>Phone:</span> <%= tradeToRender.phone %> </p>
+                <div class="trade-image" loading="lazy">
+                    <!-- <img src="uploads/contact-large.jpg" class="" alt=""> -->
+                </div>
+                <div class="trade-info-section">
+                    <h2>
+                        <%= tradeToRender.name %> - <%= tradeToRender.businessType %>
+                    </h2>
+                    <p>
+                        <%= tradeToRender.description %>
+                    </p>
+                    <p> <span>Website:</span>
+                        <%= tradeToRender.website %>
+                    </p>
+                    <p> <span>Email:</span>
+                        <%= tradeToRender.email %>
+                    </p>
+                    <p> <span>Phone:</span>
+                        <%= tradeToRender.phone %>
+                    </p>
 
 
-    <% if(tradeToRender.averageRating < 2 || tradeToRender.averageRating == 2) { %>
-        <p> <span>Rating:</span> <%= tradeToRender.averageRating %> ⭐</p>
-    <%} else if (tradeToRender.averageRating < 4 || tradeToRender.averageRating == 4) { %>
-        <p> <span>Rating:</span> <%= tradeToRender.averageRating %> ⭐⭐</p>
-    <%} else if (tradeToRender.averageRating < 6 || tradeToRender.averageRating == 6) { %>
-        <p> <span>Rating:</span> <%= tradeToRender.averageRating %> ⭐⭐⭐</p>
-    <%} else if (tradeToRender.averageRating < 8 || tradeToRender.averageRating == 8) { %>
-        <p> <span>Rating:</span> <%= tradeToRender.averageRating %> ⭐⭐⭐⭐</p>
-    <%} else if (tradeToRender.averageRating < 10 || tradeToRender.averageRating == 10) { %>
-        <p> <span>Rating:</span> <%= tradeToRender.averageRating %> ⭐⭐⭐⭐⭐</p>
-    <%} else { %>
-        <p> <span>Rating:</span> 0 <%= tradeToRender.averageRating %> </p>
-    <% } %>
-    <p>
-        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-        <a href="https://www.linkedin.com//" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-    </p>
-    </div>
-    <% reviewToRender.forEach(function(review){ %>
-        <div class="trade-review">
-            <h2 class="trade-review-title"> <%= review.title %></h2>
-            <p class="trade-review-text"> <%= review.text %> </p>
-            <p class="trade-review-author"> Posted by: <%= review.author %> </p>
-        </div>
-    <% }); %>
+                    <% if(tradeToRender.averageRating < 2 || tradeToRender.averageRating==2) { %>
+                        <p> <span>Rating:</span>
+                            <%= tradeToRender.averageRating %> ⭐
+                        </p>
+                        <%} else if (tradeToRender.averageRating < 4 || tradeToRender.averageRating==4) { %>
+                            <p> <span>Rating:</span>
+                                <%= tradeToRender.averageRating %> ⭐⭐
+                            </p>
+                            <%} else if (tradeToRender.averageRating < 6 || tradeToRender.averageRating==6) { %>
+                                <p> <span>Rating:</span>
+                                    <%= tradeToRender.averageRating %> ⭐⭐⭐
+                                </p>
+                                <%} else if (tradeToRender.averageRating < 8 || tradeToRender.averageRating==8) { %>
+                                    <p> <span>Rating:</span>
+                                        <%= tradeToRender.averageRating %> ⭐⭐⭐⭐
+                                    </p>
+                                    <%} else if (tradeToRender.averageRating < 10 || tradeToRender.averageRating==10) {
+                                        %>
+                                        <p> <span>Rating:</span>
+                                            <%= tradeToRender.averageRating %> ⭐⭐⭐⭐⭐
+                                        </p>
+                                        <%} else { %>
+                                            <p> <span>Rating:</span> 0 <%= tradeToRender.averageRating %>
+                                            </p>
+                                            <% } %>
+                                                <p>
+                                                    <a href="https://www.facebook.com/" target="_blank"><i
+                                                            class="fab fa-facebook-square"></i></a>
+                                                    <a href="https://www.linkedin.com//" target="_blank"><i
+                                                            class="fab fa-linkedin"></i></a>
+                                                    <a href="https://www.instagram.com/" target="_blank"><i
+                                                            class="fab fa-instagram"></i></a>
+                                                </p>
+                </div>
+                <% reviewToRender.forEach(function(review){ %>
+                    <div class="trade-review">
+                        <h2 class="trade-review-title">
+                            <%= review.title %>
+                        </h2>
+                        <p class="trade-review-text">
+                            <%= review.text %>
+                        </p>
+                        <p class="trade-review-author"> Posted by: <%= review.author %>
+                        </p>
+                    </div>
+                    <% }); %>
 
-    <% if (!alreadyCommented) { %>
-    <div>
-        <form action="/comment" method="POST" id="comment-form" class="comment-form-container">
-            <label for="title">Comment title</label>
-            <input type="text" id="title" name="title" class="comment-form-container-item" required><br>
-            <label for="text">Write your comment</label>
-            <textarea class="new-comment-textarea comment-form-container-item" form="comment-form" name="text" id="text" name="text" rows="3" cols="35" required></textarea>
-            
-            <div class="comment-rating-div">
-            <label for="rating">Comment Rating (1 to 10): </label>
-            <input type="number" id="rating" name="rating" class="comment-rating-input" min="1" max="10" required>
-            </div>
+                        <% if (!alreadyCommented) { %>
+                            <div>
+                                <form action="/comment" method="POST" id="comment-form" class="comment-form-container">
+                                    <label for="title">Comment title</label>
+                                    <input type="text" id="title" name="title" class="comment-form-container-item"
+                                        required><br>
+                                    <label for="text">Write your comment</label>
+                                    <textarea class="new-comment-textarea comment-form-container-item"
+                                        form="comment-form" name="text" id="text" name="text" rows="3" cols="35"
+                                        required></textarea>
 
-            <input type="submit" value="Post Your Comment" class="new-comment-btn">
-        </form>
-    </div>
-    <% } %>
+                                    <div class="comment-rating-div">
+                                        <label for="rating">Comment Rating (1 to 10): </label>
+                                        <input type="number" id="rating" name="rating" class="comment-rating-input"
+                                            min="1" max="10" required>
+                                    </div>
 
-<%- include('partials/footer'); -%>
+                                    <input type="submit" value="Post Your Comment" class="new-comment-btn">
+                                </form>
+                            </div>
+                            <% } %>
+
+                                <%- include('partials/footer'); -%>

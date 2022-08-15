@@ -23,8 +23,9 @@ const TradeSchema = new mongoose.Schema({
     },
     businessType: {
         type: String,
-        required: [true, 'Please add a business type, for example: Restaurant, Bar, Bakery, Icecream Shop...'],
-        maxlength: [30, 'Business type cannot be more then 30 characters.']
+        required: [true, 'Please add a business type, for example: Restaurant, Bar, Bakery, Ice-cream House...'],
+        maxlength: [30, 'Business type cannot be more then 30 characters.'],
+        enum: ['restaurant', 'bar', 'bakery', 'diner', 'stakehouse', 'ice-cream house', 'club', 'cafe', 'pub', 'lounge', 'hotel', 'motel', 'Restaurant', 'Bar', 'Bakery', 'Diner', 'Stakehouse', 'Ice-Cream House', 'Club', 'Cafe', 'Pub', 'Lounge', 'Hotel', 'Motel']
     },
     website: {
         type: String,
@@ -91,7 +92,22 @@ const TradeSchema = new mongoose.Schema({
             'Ice-cream Master',
             'Stake Master',
             'Dancer',
-            'Other'
+            'Other',
+            'server',
+            'cook',
+            'barista',
+            'host',
+            'coffee expert',
+            'coctail master',
+            'pizza man',
+            'delivery driver',
+            'burek master',
+            'pancake master',
+            'pastry chef',
+            'ice-cream master',
+            'stake master',
+            'dancer',
+            'other'
         ]
     },
     averageRating: {
