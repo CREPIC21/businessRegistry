@@ -139,8 +139,8 @@ exports.pay = asyncHandler(async (req, res, next) => {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "https://businessregistry.herokuapp.com/cart/success",
-            "cancel_url": "https://businessregistry.herokuapp.com/cart/cancel"
+            "return_url": "https://businessregistry.xyz/cart/success",
+            "cancel_url": "https://businessregistry.xyz/cart/cancel"
         },
         "transactions": [{
             "item_list": {
