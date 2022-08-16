@@ -18,7 +18,7 @@ const TradeSchema = new mongoose.Schema({
     slug: String,
     description: {
         type: String,
-        required: [true, 'Please add a description'],
+        required: [true, 'Please add a description.'],
         maxlength: [500, 'Description cannot be more then 500 characters.']
     },
     businessType: {
@@ -26,6 +26,15 @@ const TradeSchema = new mongoose.Schema({
         required: [true, 'Please add a business type, for example: Restaurant, Bar, Bakery, Ice-cream House...'],
         maxlength: [30, 'Business type cannot be more then 30 characters.'],
         enum: ['restaurant', 'bar', 'bakery', 'diner', 'stakehouse', 'ice-cream house', 'club', 'cafe', 'pub', 'lounge', 'hotel', 'motel', 'Restaurant', 'Bar', 'Bakery', 'Diner', 'Stakehouse', 'Ice-Cream House', 'Club', 'Cafe', 'Pub', 'Lounge', 'Hotel', 'Motel']
+    },
+    coursePgsCertificateId: {
+        type: String,
+        required: [true],
+        unique: true,
+        match: [
+            /\b(PGS){1}([0-9]){10}\b/,
+            "Please add PGS certificate ID number."
+        ]
     },
     website: {
         type: String,

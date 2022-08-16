@@ -1,137 +1,167 @@
 [
-    {
-        "_id": "5d713995b721c3bb38c1f5d0",
+	{
+		"_id": "5d713995b721c3bb38c1f5d0",
 		"userID": "5d7a514b5d2c12c7449be045",
 		"name": "Pizza Mia",
-        "ownerName": "Marco Marulic",
+		"ownerName": "Marco Marulic",
 		"description": "Pizza Mia is authenticated pizzeria making pizzas from wooden oven",
 		"businessType": "Restaurant",
-        "website": "https://pizzamia.com",
+		"coursePgsCertificateId": "PGS1111111110",
+		"website": "https://pizzamia.com",
 		"phone": "(453) 254 4572",
 		"email": "enjoy@pizzamia.com",
 		"address": "Dworska 86 Skrzeszewo",
-		"careers": ["Pizza Man", "Server", "Delivery Driver"],
+		"careers": [
+			"Pizza Man",
+			"Server",
+			"Delivery Driver"
+		],
 		"numberOfEmployees": 10,
-        "hiring": true,
+		"hiring": true,
 		"averagePricePerCouple": 30
-    },
-
+	},
 	{
-        "_id": "5d713995b721c3bb38c1f5d1",
+		"_id": "5d713995b721c3bb38c1f5d1",
 		"userID": "5d7a514b5d2c12c7449be046",
 		"name": "Coctails Shake Shake",
-        "ownerName": "Steve Stevenson",
+		"ownerName": "Steve Stevenson",
 		"description": "Coctails Shake Shake shakes coctails from all over the world",
 		"businessType": "Bar",
-        "website": "https://shakeshake.com",
+		"coursePgsCertificateId": "PGS1111111111",
+		"website": "https://shakeshake.com",
 		"phone": "(898) 874 3987",
 		"email": "shake@coctails.com",
 		"address": "Perseusza 10A Osowa",
-		"careers": ["Coctail Master", "Server"],
+		"careers": [
+			"Coctail Master",
+			"Server"
+		],
 		"numberOfEmployees": 9,
-        "hiring": true,
+		"hiring": true,
 		"averagePricePerCouple": 16
-    },
-
+	},
 	{
-        "_id": "5d713995b721c3bb38c1f5d2",
+		"_id": "5d713995b721c3bb38c1f5d2",
 		"userID": "5d7a514b5d2c12c7449be047",
 		"name": "Bakery Burek",
-        "ownerName": "Angela Angelson",
+		"ownerName": "Angela Angelson",
 		"description": "Bakery Burek has all the cookies in the world",
 		"businessType": "Bakery",
-        "website": "https://bakeryburek.com",
+		"coursePgsCertificateId": "PGS1111111112",
+		"website": "https://bakeryburek.com",
 		"phone": "(898) 874 7645",
 		"email": "bakery@burek.com",
 		"address": "Prosta 10 Zamosc",
-		"careers": ["Burek Master", "Delivery Driver"],
+		"careers": [
+			"Burek Master",
+			"Delivery Driver"
+		],
 		"numberOfEmployees": 6,
-        "hiring": true,
+		"hiring": true,
 		"averagePricePerCouple": 10
-    },
-
+	},
 	{
-        "_id": "5d713995b721c3bb38c1f5d3",
+		"_id": "5d713995b721c3bb38c1f5d3",
 		"userID": "5d7a514b5d2c12c7449be048",
 		"name": "The Diner",
-        "ownerName": "Dinko Dinkovic",
+		"ownerName": "Dinko Dinkovic",
 		"description": "Best pancakes in the world",
 		"businessType": "Diner",
-        "website": "https://diner.com",
+		"coursePgsCertificateId": "PGS1111111113",
+		"website": "https://diner.com",
 		"phone": "(898) 875 3987",
 		"email": "diner@pancakes.com",
 		"address": "Ignacego Krasickiego 25 Warszawa",
-		"careers": ["Pancake Master", "Server", "Cook"],
+		"careers": [
+			"Pancake Master",
+			"Server",
+			"Cook"
+		],
 		"numberOfEmployees": 19,
-        "hiring": true,
+		"hiring": true,
 		"averagePricePerCouple": 25
-    },
-
+	},
 	{
-        "_id": "5d713995b721c3bb38c1f5d4",
+		"_id": "5d713995b721c3bb38c1f5d4",
 		"userID": "5d7a514b5d2c12c7449be049",
 		"name": "The Stake House",
-        "ownerName": "Stake Stekic",
+		"ownerName": "Stake Stekic",
 		"description": "Most tender stakes in the world",
 		"businessType": "Stakehouse",
-        "website": "https://stakehouse.com",
+		"coursePgsCertificateId": "PGS1111111114",
+		"website": "https://stakehouse.com",
 		"phone": "(898) 875 3987",
 		"email": "stake@house.com",
 		"address": "Vinka Hribara 1a Prigorje Brdovecko",
-		"careers": ["Stake Master", "Server", "Cook", "Pastry Chef"],
+		"careers": [
+			"Stake Master",
+			"Server",
+			"Cook",
+			"Pastry Chef"
+		],
 		"numberOfEmployees": 49,
-        "hiring": true,
+		"hiring": true,
 		"averagePricePerCouple": 100
-    },
-
+	},
 	{
-        "_id": "5d713995b721c3bb38c1f5d5",
+		"_id": "5d713995b721c3bb38c1f5d5",
 		"userID": "5d7a514b5d2c12c7449be050",
 		"name": "Ice Cream Heaven",
-        "ownerName": "Mister Cream",
+		"ownerName": "Mister Cream",
 		"description": "Natural ice-creams for everyone",
-		"businessType": "Ice-cream house",
-        "website": "https://icecream.com",
+		"businessType": "Ice-Cream House",
+		"coursePgsCertificateId": "PGS1111111115",
+		"website": "https://icecream.com",
 		"phone": "(898) 875 3987",
 		"email": "cream@ice.com",
 		"address": "Nova Cesta 4 Prigorje Brdovecko",
-		"careers": ["Ice-cream Master"],
+		"careers": [
+			"Ice-cream Master"
+		],
 		"numberOfEmployees": 49,
-        "hiring": true,
+		"hiring": true,
 		"averagePricePerCouple": 100
-    },
-
+	},
 	{
-        "_id": "5d713995b721c3bb38c1f5d6",
+		"_id": "5d713995b721c3bb38c1f5d6",
 		"userID": "5d7a514b5d2c12c7449be056",
 		"name": "Dancing Planet",
-        "ownerName": "Disco Loco",
+		"ownerName": "Disco Loco",
 		"description": "Dancing, live music, drinks",
 		"businessType": "Club",
-        "website": "https://disco.com",
+		"coursePgsCertificateId": "PGS1111111116",
+		"website": "https://disco.com",
 		"phone": "(898) 875 3987",
 		"email": "disco@loco.com",
 		"address": "Nova Cesta 4 Prigorje Brdovecko",
-		"careers": ["Dancer", "Coctail Master", "Server"],
+		"careers": [
+			"Dancer",
+			"Coctail Master",
+			"Server"
+		],
 		"numberOfEmployees": 15,
-        "hiring": true,
+		"hiring": true,
 		"averagePricePerCouple": 100
-    },
-
+	},
 	{
-        "_id": "5d713995b721c3bb38c1f5d7",
+		"_id": "5d713995b721c3bb38c1f5d7",
 		"userID": "5d7a514b5d2c12c7449be057",
 		"name": "Greek Kitchen",
-        "ownerName": "Jonny Bravo",
+		"ownerName": "Jonny Bravo",
 		"description": "Best souvlaki ever",
 		"businessType": "Restaurant",
-        "website": "https://disco.com",
+		"coursePgsCertificateId": "PGS1111111117",
+		"website": "https://disco.com",
 		"phone": "(898) 875 3987",
 		"email": "disco@loco.com",
 		"address": "Nova Cesta 4 Prigorje Brdovecko",
-		"careers": ["Dancer", "Coctail Master", "Server"],
+		"careers": [
+			"Dancer",
+			"Coctail Master",
+			"Server"
+		],
 		"numberOfEmployees": 15,
-        "hiring": true,
+		"hiring": true,
 		"averagePricePerCouple": 100
-    }
+	}
 ]
