@@ -109,14 +109,14 @@ app.use(mongoSanitize());
 // Set security headers
 // app.use(helmet());
 
-// Prevent XSS attackts
+// Prevent XSS attackts - injecting scripts in API requests
 app.use(xss());
 
 // Rate limiting
 const limiter = rateLimit({
     // setup for 100 API calls in 10 minutes
     windowMs: 10 * 60 * 1000,
-    max: 5000
+    max: 100
 });
 app.use(limiter);
 

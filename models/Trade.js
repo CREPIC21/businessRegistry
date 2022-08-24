@@ -29,7 +29,7 @@ const TradeSchema = new mongoose.Schema({
     },
     coursePgsCertificateId: {
         type: String,
-        required: [true],
+        required: [true, 'Please add PGS certificate number.'],
         unique: true,
         match: [
             /\b(PGS){1}([0-9]){10}\b/,
@@ -187,7 +187,7 @@ TradeSchema.pre('save', async function(next) {
         country: loc[0].countryCode
     }
 
-    // do not save address in DB as we are getting the address from formattedAddress above
+    // do not save address in DB as we are getting the address from formattedAddress above that is saved to the DB
     this.address = undefined;
 
     next();

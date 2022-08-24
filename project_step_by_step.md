@@ -424,6 +424,11 @@ Summarize of what needs to be done:
 - add radio button to change background colors - day/night
 - test sending emails on my real test accounts, switch mailtrap SMTP to gmail SMTP
 - fix the data send via PayPal to match data in the cart - for now PayPal cart data are hardcoded
+- add a page where visitor can see all the new releases, something like changlog
+- add a button in a cart to remove all items in a cart(at the moment visitor can only remove item by item)
+- add a page where we would list all recieved email messages, only for admin to access(something like zendesk view), we would need a new model in our DB for emails
+- add a map for each profession based on their location
+- add a slug for each trade in UI, once we click on see info we should see a slug in path instead trade ID from DB
 
 DONE ASSIGNMENTS AND FIXES
 - fix the about page - DONE REMOVED
