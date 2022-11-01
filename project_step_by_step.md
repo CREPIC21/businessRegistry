@@ -486,5 +486,6 @@ DOCGEN
   - git add .
   - git commit -m <message>
   - git push origin main
+- added GitHub action for automatic updates on the server once I push changes from my local machine to GitHub
 
 testing, testing, testing, testing, testing
