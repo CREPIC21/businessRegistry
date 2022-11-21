@@ -113,6 +113,7 @@ div.grid-item-form a.register-btn-home {
 header {
     /* background-color: var(--black); */
     background-image: linear-gradient(to right, #2c2c2c, #233241);
+    /* background-image: linear-gradient(to right, #ED4264, #FFEDBC); */
     text-align: center;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
