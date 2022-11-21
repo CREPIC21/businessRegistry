@@ -31,6 +31,7 @@ pipeline {
                     // sh "cat config/config.env.env"
                     echo "${env.MONGO_URI}"
                     echo "${CONFIG}"
+                    sh "cp ${CONFIG} config.env"
 					// echo "Path - $PATH"
 					// echo "Build Number - $env.BUILD_NUMBER"
 					// echo "Build ID - $env.BUILD_ID"
