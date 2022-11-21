@@ -51,17 +51,17 @@ pipeline {
 					// }
 				}
 			}
-		// 	stage ('Push Docker Image') {
-		// 		steps {
-        //             // docker push crepic21/hello-world-bsnodejs:${env.BUILD_ID}
-		// 			script {
-		// 				docker.withRegistry("", "dockerHub") {
-		// 					dockerImage.push();
-		// 					// dockerImage.push('latest');
-		// 				}
-		// 			}
-		// 		}
-		// }
+			stage ('Push Docker Image') {
+				steps {
+                    // docker push crepic21/hello-world-bsnodejs:${env.BUILD_ID}
+					script {
+						docker.withRegistry("", "dockerHub") {
+							dockerImage.push();
+							// dockerImage.push('latest');
+						}
+					}
+				}
+		}
 	} 
 	post {
 		always {
