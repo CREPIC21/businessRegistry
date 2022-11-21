@@ -29,7 +29,7 @@ pipeline {
 					sh "node --version"
 					sh "docker version"
                     // sh "cat config/config.env.env"
-                    // echo "${env.MONGO_URI}"
+                    echo "${env.MONGO_URI}"
                     // echo "${CONFIG}"
                     // sh "sudo cp ${CONFIG} config.env"
                     // sh "cat config.env"
@@ -47,7 +47,7 @@ pipeline {
 				steps {
 					// docker build -t crepic21/hello-world-bsnodejs:${env.BUILD_ID}
 					script {
-						dockerImage = docker.build("crepic21/hello-world-bsnodejs:${env.BUILD_ID}")
+						dockerImage = docker.build("crepic21/hello-world-bsnodejs:${env.BUILD_ID}", [-e MONGO_URI="${env.MONGO_URI}"])
 					}
 				}
 			}
