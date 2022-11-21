@@ -34,7 +34,7 @@ pipeline {
 					echo "Job Name - $env.JOB_NAME"
 					echo "Build Tag - $env.BUILD_TAG"
 					echo "Build URL - $env.BUILD_URL"
-                    echo "process.env.env.MONGO_URI"
+                    echo "process.env.env.MONGO_URI - ${MONGO_URI}"
 				}
 			}
 		// 	stage ('Build Docker Image') {
