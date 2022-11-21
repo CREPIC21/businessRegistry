@@ -33,40 +33,41 @@ pipeline {
 					echo "Job Name - $env.JOB_NAME"
 					echo "Build Tag - $env.BUILD_TAG"
 					echo "Build URL - $env.BUILD_URL"
+                    echo "process.env.env.MONGO_URI"
 				}
 			}
-			stage ('Build Docker Image') {
-				steps {
-					// docker build -t crepic21/hello-world-bsnodejs:${env.BUILD_ID}
-					script {
-						dockerImage = docker.build("crepic21/hello-world-bsnodejs:${env.BUILD_ID}")
-					}
-				}
-			}
-			stage ('Push Docker Image') {
-				steps {
-                    // docker push crepic21/hello-world-bsnodejs:${env.BUILD_ID}
-					script {
-						docker.withRegistry("", "dockerHub") {
-							dockerImage.push();
-							// dockerImage.push('latest');
-						}
-					}
-				}
-		}
+		// 	stage ('Build Docker Image') {
+		// 		steps {
+		// 			// docker build -t crepic21/hello-world-bsnodejs:${env.BUILD_ID}
+		// 			script {
+		// 				dockerImage = docker.build("crepic21/hello-world-bsnodejs:${env.BUILD_ID}")
+		// 			}
+		// 		}
+		// 	}
+		// 	stage ('Push Docker Image') {
+		// 		steps {
+        //             // docker push crepic21/hello-world-bsnodejs:${env.BUILD_ID}
+		// 			script {
+		// 				docker.withRegistry("", "dockerHub") {
+		// 					dockerImage.push();
+		// 					// dockerImage.push('latest');
+		// 				}
+		// 			}
+		// 		}
+		// }
 	} 
 	post {
 		always {
-			echo "I am awsome. I run always."
+			echo "I run always."
 		}
 		success {
-			echo "I run when you are successful"
+			echo "I run when you are successful."
 		}
 		failure {
-			echo "I run when you fail"
+			echo "I run when you fail."
 		}
 		changed {
-			echo "I run when you build fails showing what changed and vice versa"
+			echo "I run when build fails showing what changed and vice versa."
 		}
 	}
 }
