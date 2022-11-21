@@ -40,26 +40,26 @@ pipeline {
                     // echo "process.env.env.MONGO_URI - $MONGO_URI"
                     // echo "test - $TEST"
 				}
-			}
-			stage ('Build Docker Image') {
-				steps {
-					// docker build -t crepic21/hello-world-bsnodejs:${env.BUILD_ID}
-					script {
-						dockerImage = docker.build("crepic21/hello-world-bsnodejs:${env.BUILD_ID}")
-					}
-				}
-			}
-			stage ('Push Docker Image') {
-				steps {
-                    // docker push crepic21/hello-world-bsnodejs:${env.BUILD_ID}
-					script {
-						docker.withRegistry("", "dockerHub") {
-							dockerImage.push();
-							// dockerImage.push('latest');
-						}
-					}
-				}
-		}
+		// 	}
+		// 	stage ('Build Docker Image') {
+		// 		steps {
+		// 			// docker build -t crepic21/hello-world-bsnodejs:${env.BUILD_ID}
+		// 			script {
+		// 				dockerImage = docker.build("crepic21/hello-world-bsnodejs:${env.BUILD_ID}")
+		// 			}
+		// 		}
+		// 	}
+		// 	stage ('Push Docker Image') {
+		// 		steps {
+        //             // docker push crepic21/hello-world-bsnodejs:${env.BUILD_ID}
+		// 			script {
+		// 				docker.withRegistry("", "dockerHub") {
+		// 					dockerImage.push();
+		// 					// dockerImage.push('latest');
+		// 				}
+		// 			}
+		// 		}
+		// }
 	} 
 	post {
 		always {
