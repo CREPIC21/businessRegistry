@@ -21,7 +21,7 @@ pipeline {
 		dockerHome = tool "myDocker"
         nodejsHome = tool "myNodeJS"
 		PATH="$dockerHome/bin:$nodejsHome/bin:$PATH"
-        MONGO_URI=process.env.env.MONGO_URI
+        MONGO_URI="config/config.env.env"
         TEST="testing"
 	}
 	stages {
