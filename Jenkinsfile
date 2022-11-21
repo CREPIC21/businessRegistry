@@ -78,3 +78,6 @@ pipeline {
 		}
 	}
 }
+
+// IMPORTANT
+// -- https://blog.bitsrc.io/how-to-pass-environment-info-during-docker-builds-1f7c5566dd0e
