@@ -27,7 +27,6 @@ pipeline {
 				steps {
 					sh "node --version"
 					sh "docker version"
-					echo "Build"
 					echo "Path - $PATH"
 					echo "Build Number - $env.BUILD_NUMBER"
 					echo "Build ID - $env.BUILD_ID"
@@ -38,7 +37,7 @@ pipeline {
 			}
 			stage ('Build Docker Image') {
 				steps {
-					// docker build -t crepic21/currency-exchange-devops:$env.BUILD_TAG
+					// docker build -t crepic21/hello-world-bsnodejs:${env.BUILD_ID}
 					script {
 						dockerImage = docker.build("crepic21/hello-world-bsnodejs:${env.BUILD_ID}")
 					}
@@ -46,10 +45,11 @@ pipeline {
 			}
 			stage ('Push Docker Image') {
 				steps {
+                    // docker push crepic21/hello-world-bsnodejs:${env.BUILD_ID}
 					script {
 						docker.withRegistry("", "dockerHub") {
 							dockerImage.push();
-							dockerImage.push('latest');
+							// dockerImage.push('latest');
 						}
 					}
 				}
