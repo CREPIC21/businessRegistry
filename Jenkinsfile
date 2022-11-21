@@ -21,7 +21,7 @@ pipeline {
 		dockerHome = tool "myDocker"
         nodejsHome = tool "myNodeJS"
 		PATH="$dockerHome/bin:$nodejsHome/bin:$PATH"
-        CONFIG=credentials(config_env)
+        CONFIG=credentials("config_env")
 	}
 	stages {
 			stage('Checkout') {
