@@ -45,7 +45,7 @@ pipeline {
 			}
 			stage ('Build Docker Image') {
 				steps {
-					sh "docker build -t crepic21/hello-world-bsnodejs:${env.BUILD_ID} ."
+					sh "docker build -t crepic21/hello-world-bsnodejs:${env.BUILD_ID} --build-arg MONGO_URI_ARG=${env.MONGO_URI} ."
 					// script {
 					// 	dockerImage = docker.build("crepic21/hello-world-bsnodejs:${env.BUILD_ID}", "--build-arg MONGO_URI_ARG=${env.MONGO_URI}")
 					// }
