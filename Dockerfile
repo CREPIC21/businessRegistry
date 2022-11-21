@@ -1,5 +1,7 @@
 FROM node:19-alpine
+ARG MONGO_URI_ARG=test
 WORKDIR /app
+ENV MONGO_URI=$MONGO_URI_ARG
 COPY . /app
 RUN npm install
 EXPOSE 5000
