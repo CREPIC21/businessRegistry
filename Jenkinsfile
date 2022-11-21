@@ -30,7 +30,7 @@ pipeline {
 					sh "docker version"
                     // sh "cat config/config.env.env"
                     echo "${env.MONGO_URI}"
-                    sh "${CONFIG}"
+                    echo "${CONFIG}"
 					// echo "Path - $PATH"
 					// echo "Build Number - $env.BUILD_NUMBER"
 					// echo "Build ID - $env.BUILD_ID"
