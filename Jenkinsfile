@@ -81,3 +81,5 @@ pipeline {
 
 // IMPORTANT
 // -- https://blog.bitsrc.io/how-to-pass-environment-info-during-docker-builds-1f7c5566dd0e
+// -- first set up env vars in Jenkins from config.env
+// -- then you can use them in Jenkins piplines scripts following the steps in the article
