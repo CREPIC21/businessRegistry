@@ -21,7 +21,7 @@ pipeline {
 		dockerHome = tool "myDocker"
         nodejsHome = tool "myNodeJS"
 		PATH="$dockerHome/bin:$nodejsHome/bin:$PATH"
-        CONFIG=credentials("config_env")
+        // CONFIG=credentials("config_env")
 	}
 	stages {
 			stage('Checkout') {
@@ -29,10 +29,10 @@ pipeline {
 					sh "node --version"
 					sh "docker version"
                     // sh "cat config/config.env.env"
-                    echo "${env.MONGO_URI}"
-                    echo "${CONFIG}"
-                    sh "sudo cp ${CONFIG} config.env"
-                    sh "cat config.env"
+                    // echo "${env.MONGO_URI}"
+                    // echo "${CONFIG}"
+                    // sh "sudo cp ${CONFIG} config.env"
+                    // sh "cat config.env"
 					// echo "Path - $PATH"
 					// echo "Build Number - $env.BUILD_NUMBER"
 					// echo "Build ID - $env.BUILD_ID"
