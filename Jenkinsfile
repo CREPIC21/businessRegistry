@@ -19,7 +19,8 @@ pipeline {
 	agent any
 	environment {
 		dockerHome = tool "myDocker"
-		PATH="$dockerHome/bin:$PATH"
+        nodejsHome = tool "myNodeJS"
+		PATH="$dockerHome/bin:$nodejsHome/bin:$PATH"
 	}
 	stages {
 			stage('Checkout') {
