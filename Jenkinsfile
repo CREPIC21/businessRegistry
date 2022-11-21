@@ -22,6 +22,7 @@ pipeline {
         nodejsHome = tool "myNodeJS"
 		PATH="$dockerHome/bin:$nodejsHome/bin:$PATH"
         MONGO_URI=process.env.env.MONGO_URI
+        TEST="testing"
 	}
 	stages {
 			stage('Checkout') {
@@ -34,7 +35,8 @@ pipeline {
 					echo "Job Name - $env.JOB_NAME"
 					echo "Build Tag - $env.BUILD_TAG"
 					echo "Build URL - $env.BUILD_URL"
-                    echo "process.env.env.MONGO_URI - ${MONGO_URI}"
+                    echo "process.env.env.MONGO_URI - $MONGO_URI"
+                    echo "test - $TEST"
 				}
 			}
 		// 	stage ('Build Docker Image') {
