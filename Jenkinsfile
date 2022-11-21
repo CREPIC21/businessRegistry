@@ -21,7 +21,7 @@ pipeline {
 		dockerHome = tool "myDocker"
         nodejsHome = tool "myNodeJS"
 		PATH="$dockerHome/bin:$nodejsHome/bin:$PATH"
-        MONGO_URI="config/config.env.env"
+        // MONGO_URI=${MONGO_URI}
         TEST="testing"
 	}
 	stages {
@@ -30,6 +30,7 @@ pipeline {
 					sh "node --version"
 					sh "docker version"
                     sh "cat config/config.env.env"
+                    echo "${env.MONGO_URI}"
 					// echo "Path - $PATH"
 					// echo "Build Number - $env.BUILD_NUMBER"
 					// echo "Build ID - $env.BUILD_ID"
