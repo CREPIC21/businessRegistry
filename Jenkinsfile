@@ -21,15 +21,13 @@ pipeline {
 		dockerHome = tool "myDocker"
         nodejsHome = tool "myNodeJS"
 		PATH="$dockerHome/bin:$nodejsHome/bin:$PATH"
-        // MONGO_URI=${MONGO_URI}
-        TEST="testing"
 	}
 	stages {
 			stage('Checkout') {
 				steps {
 					sh "node --version"
 					sh "docker version"
-                    sh "cat config/config.env.env"
+                    // sh "cat config/config.env.env"
                     echo "${env.MONGO_URI}"
 					// echo "Path - $PATH"
 					// echo "Build Number - $env.BUILD_NUMBER"
@@ -41,25 +39,25 @@ pipeline {
                     // echo "test - $TEST"
 				}
 			}
-		// 	stage ('Build Docker Image') {
-		// 		steps {
-		// 			// docker build -t crepic21/hello-world-bsnodejs:${env.BUILD_ID}
-		// 			script {
-		// 				dockerImage = docker.build("crepic21/hello-world-bsnodejs:${env.BUILD_ID}")
-		// 			}
-		// 		}
-		// 	}
-		// 	stage ('Push Docker Image') {
-		// 		steps {
-        //             // docker push crepic21/hello-world-bsnodejs:${env.BUILD_ID}
-		// 			script {
-		// 				docker.withRegistry("", "dockerHub") {
-		// 					dockerImage.push();
-		// 					// dockerImage.push('latest');
-		// 				}
-		// 			}
-		// 		}
-		// }
+			stage ('Build Docker Image') {
+				steps {
+					// docker build -t crepic21/hello-world-bsnodejs:${env.BUILD_ID}
+					script {
+						dockerImage = docker.build("crepic21/hello-world-bsnodejs:${env.BUILD_ID}")
+					}
+				}
+			}
+			stage ('Push Docker Image') {
+				steps {
+                    // docker push crepic21/hello-world-bsnodejs:${env.BUILD_ID}
+					script {
+						docker.withRegistry("", "dockerHub") {
+							dockerImage.push();
+							// dockerImage.push('latest');
+						}
+					}
+				}
+		}
 	} 
 	post {
 		always {
