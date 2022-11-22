@@ -21,7 +21,6 @@ pipeline {
 		dockerHome = tool "myDocker"
         nodejsHome = tool "myNodeJS"
 		PATH="$dockerHome/bin:$nodejsHome/bin:$PATH"
-        // CONFIG=credentials("config_env")
 	}
 	stages {
 			stage('Checkout') {
@@ -47,7 +46,7 @@ pipeline {
 				steps {
 					// dockerImage = sh "docker build -t crepic21/hello-world-bsnodejs:${env.BUILD_ID} --build-arg MONGO_URI_ARG='${env.MONGO_URI}' ."
 					script {
-						dockerImage = docker.build("crepic21/hello-world-bsnodejs:${env.BUILD_ID}", "--build-arg MONGO_URI_ARG='${env.MONGO_URI}' .")
+						dockerImage = docker.build("crepic21/hello-world-bsnodejs:${env.BUILD_ID}", "--build-arg NODE_ENV_ARG='${env.NODE_ENV}' --build-arg PORT_ARG='${env.PORT}' --build-arg MONGO_URI_ARG='${env.MONGO_URI}' --build-arg GEOCODER_PROVIDER_ARG='${env.GEOCODER_PROVIDER}' --build-arg GEOCODER_API_KEY_ARG='${env.GEOCODER_API_KEY}' --build-arg FILE_UPLOAD_PATH_ARG='${env.FILE_UPLOAD_PATH}' --build-arg MAX_FILE_UPLOAD_ARG='${env.MAX_FILE_UPLOAD}' --build-arg JWT_SECRET_ARG='${env.JWT_SECRET}' --build-arg JWT_EXPIRE_ARG='${env.JWT_EXPIRE}' --build-arg JWT_COOKIE_EXPIRE_ARG='${env.JWT_COOKIE_EXPIRE}' --build-arg SMTP_HOST_ARG='${env.SMTP_HOST}' --build-arg SMTP_PORT_ARG='${env.SMTP_PORT}' --build-arg SMTP_EMAIL_ARG='${env.SMTP_EMAIL}' --build-arg SMTP_PASSWORD_ARG='${env.SMTP_PASSWORD}' --build-arg FROM_EMAIL_ARG='${env.FROM_EMAIL}' --build-arg FROM_NAME_ARG='${env.FROM_NAME}' --build-arg PAY_PAL_CLIENT_ID_ARG='${env.PAY_PAL_CLIENT_ID}' --build-arg PAY_PAL_CLIENT_SECRET_ARG='${env.PAY_PAL_CLIENT_SECRET}' --build-arg SHEETY_API_POST_ARG='${env.SHEETY_API_POST}' .")
 					}
 				}
 			}
