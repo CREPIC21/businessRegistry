@@ -43,7 +43,7 @@ RUN npm install
 EXPOSE 5000
 CMD npm run dev
 
-# build a image
+# build an image
 # - docker build -t crepic21/hello-world-bsnodejs:0.0.1.RELEASE .
 # - docker build -t crepic21/hello-world-bsnodejs:0.0.2.RELEASE .
 

@@ -27,19 +27,12 @@ pipeline {
 				steps {
 					sh "node --version"
 					sh "docker version"
-                    // sh "cat config/config.env.env"
-                    // echo "${env.MONGO_URI}"
-                    // echo "${CONFIG}"
-                    // sh "sudo cp ${CONFIG} config.env"
-                    // sh "cat config.env"
 					// echo "Path - $PATH"
 					// echo "Build Number - $env.BUILD_NUMBER"
 					// echo "Build ID - $env.BUILD_ID"
 					// echo "Job Name - $env.JOB_NAME"
 					// echo "Build Tag - $env.BUILD_TAG"
 					// echo "Build URL - $env.BUILD_URL"
-                    // echo "process.env.env.MONGO_URI - $MONGO_URI"
-                    // echo "test - $TEST"
 				}
 			}
 			stage ('Build Docker Image') {
@@ -78,7 +71,15 @@ pipeline {
 	}
 }
 
-// IMPORTANT
-// -- https://blog.bitsrc.io/how-to-pass-environment-info-during-docker-builds-1f7c5566dd0e
-// -- first set up env vars in Jenkins from config.env
-// -- then you can use them in Jenkins piplines scripts following the steps in the article
+// IMPORTANT -> JENKINS SETUP for ENVs
+// - https://blog.bitsrc.io/how-to-pass-environment-info-during-docker-builds-1f7c5566dd0e
+// - add all envs from config.env to Manage Jenkins -> Configure System -> Global properties -> Environment variables
+// - set up ARGs for all envs from config.env in Dockerfile and add them to docker.build command
+// - set up ENVs in Dockerfile to reference coresponding ARGs
+
+// NODEJS PLUGIN
+// - https://blog.devgenius.io/integrating-jenkins-with-a-nodejs-project-219d249b1fb2
+
+// TESTING
+// - once the image is build and pushed using Jenkins pipeline, pull the image fro DockerHub and test if container is working
+// - docker run -i -t -d -p 5000:5000 crepic21/hello-world-bsnodejs:<tag_name>
