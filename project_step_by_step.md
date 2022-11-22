@@ -478,7 +478,7 @@ DOCGEN
 - docgen command to create index.html file from Postman document API:
   - ./docgen build -i dc.postman_collection.json -o index.html
 
-  GITHUB
+GITHUB
 - changing SSH key passphrase
   - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases
 - commands to commit changes to github:
@@ -486,9 +486,9 @@ DOCGEN
   - git add .
   - git commit -m <message>
   - git push origin main
-- added GitHub action for automatic updates on the server once I push changes from my local machine to GitHub
 
 DEVOPS LEARNING
+- added GitHub action for automatic updates on the Linode server once I push changes from my local machine to GitHub
 - added Jenkins file for pipeline 
 -- pipeline will build and push new image to DocketHub when new changes are committed to GitHub
 - added two Azure DevOps pipelines
