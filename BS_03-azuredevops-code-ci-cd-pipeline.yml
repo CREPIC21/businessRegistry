@@ -70,7 +70,7 @@ stages:
     - task: KubernetesManifest@0
       inputs:
         action: 'deploy'
-        kubernetesServiceConnection: 'azure-kubernetes-connection'
+        kubernetesServiceConnection: 'bs-azure-kubernetes-cluster-service-connection'
         namespace: 'default'
         manifests: '$(System.ArtifactsDirectory)/configuration/kubernetes/deployment.yaml'
         containers: 'crepic21/hello-world-bsnodejs:$(tag)'
