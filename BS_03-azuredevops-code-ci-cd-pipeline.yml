@@ -51,7 +51,7 @@ stages:
         publishLocation: 'Container'
 
 # Stage 2
-# Download the K8S Files -> deployment.yaml file
+# Download the K8S Files --> deployment.yaml file
 - stage: Deploy
   displayName: Deploy image
   jobs:
