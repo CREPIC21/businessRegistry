@@ -67,7 +67,7 @@ spec:
     protocol: TCP
     targetPort: 5000
   selector:
-    app: hello-world-bsnodejs
+    app: business-registry
   sessionAffinity: None
   type: LoadBalancer
 
