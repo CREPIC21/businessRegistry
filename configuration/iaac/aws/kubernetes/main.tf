@@ -94,6 +94,6 @@ provider "aws" {
 # -- kubectl get secret default-token-j9wxj -o yaml -> the whole output is a secret for kubernetes service connaction in Azure DevOpos
 
 ### ISSUE ###
-# - deploying on AWS cluster not working as app can't connect to MongoDB Atlas
+# - deploying on AWS cluster not working as app can't connect to MongoDB Atlas database
 # - possible solution peering
 # -- https://cloud.mongodb.com/v2/6150399f555d3d674f00748d#security/network/peering
