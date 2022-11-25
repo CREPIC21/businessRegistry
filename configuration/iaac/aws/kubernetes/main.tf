@@ -92,3 +92,8 @@ provider "aws" {
 # ---- Kubernetes control plane is running at URL <--- THIS URL IS FOR SERVER URL IN kubernetes service connaction in Azure DevOpos
 # -- kubectl get serviceaccounts default -o yaml -> to get the name of the secret
 # -- kubectl get secret default-token-j9wxj -o yaml -> the whole output is a secret for kubernetes service connaction in Azure DevOpos
+
+### ISSUE ###
+# - deploying on AWS cluster not working as app can't connect to MongoDB Atlas
+# - possible solution peering
+# -- https://cloud.mongodb.com/v2/6150399f555d3d674f00748d#security/network/peering
