@@ -79,3 +79,16 @@ resource "kubernetes_cluster_role_binding" "example" {
 provider "aws" {
   region = "eu-west-1"
 }
+
+
+### IMPORTANT ###
+# - steps to connect to aws kubernetes cluster for purposes of creating kubernetes service connaction in Azure DevOpos
+# -- aws --version
+# -- aws configure
+# -- aws eks --region <region_name> update-kubeconfig --name=<cluster_name>
+# -- kubectl version
+# -- kubectl get all -o wide
+# -- kubectl cluster-info
+# ---- Kubernetes control plane is running at URL <--- THIS URL IS FOR SERVER URL IN kubernetes service connaction in Azure DevOpos
+# -- kubectl get serviceaccounts default -o yaml -> to get the name of the secret
+# -- kubectl get secret default-token-j9wxj -o yaml -> the whole output is a secret for kubernetes service connaction in Azure DevOpos
