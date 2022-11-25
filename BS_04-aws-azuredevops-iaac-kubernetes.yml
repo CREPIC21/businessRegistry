@@ -18,12 +18,12 @@ steps:
     backendAWSBucketName: 'terraform-backend-state-crepic21-bs123'
     backendAWSKey: 'kubernetes-dev.tfstate'
 # apply
-# - task: TerraformTaskV3@3
-#   inputs:
-#     provider: 'aws'
-#     command: 'apply'
-#     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/aws/kubernetes'
-#     environmentServiceNameAWS: 'bs-aws-for-terraform'
+- task: TerraformTaskV3@3
+  inputs:
+    provider: 'aws'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/aws/kubernetes'
+    environmentServiceNameAWS: 'bs-aws-for-terraform'
 # - task: TerraformTaskV3@3
 #   inputs:
 #     provider: 'aws'
