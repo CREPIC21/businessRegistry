@@ -1,0 +1,77 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'
+
+# Stage 1
+# Build Docker Image
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Docker@2
+      displayName: Build an image with envs as --build-arg
+      inputs:
+        containerRegistry: 'crepic21-docker-hub'
+        repository: 'crepic21/hello-world-bsnodejs'
+        command: 'build'
+        Dockerfile: '**/Dockerfile'
+        arguments: '--build-arg NODE_ENV_ARG="$(NODE_ENV)" --build-arg PORT_ARG="$(PORT)" --build-arg MONGO_URI_ARG="$(MONGO_URI)" --build-arg GEOCODER_PROVIDER_ARG="$(GEOCODER_PROVIDER)" --build-arg GEOCODER_API_KEY_ARG="$(GEOCODER_API_KEY)" --build-arg FILE_UPLOAD_PATH_ARG="$(FILE_UPLOAD_PATH)" --build-arg MAX_FILE_UPLOAD_ARG="$(MAX_FILE_UPLOAD)" --build-arg JWT_SECRET_ARG="$(JWT_SECRET)" --build-arg JWT_EXPIRE_ARG="$(JWT_EXPIRE)" --build-arg JWT_COOKIE_EXPIRE_ARG="$(JWT_COOKIE_EXPIRE)" --build-arg SMTP_HOST_ARG="$(SMTP_HOST)" --build-arg SMTP_PORT_ARG="$(SMTP_PORT)" --build-arg SMTP_EMAIL_ARG="$(SMTP_EMAIL)" --build-arg SMTP_PASSWORD_ARG="$(SMTP_PASSWORD)" --build-arg FROM_EMAIL_ARG="$(FROM_EMAIL)" --build-arg FROM_NAME_ARG="$(FROM_NAME)" --build-arg PAY_PAL_CLIENT_ID_ARG="$(PAY_PAL_CLIENT_ID)" --build-arg PAY_PAL_CLIENT_SECRET_ARG="$(PAY_PAL_CLIENT_SECRET)" --build-arg SHEETY_API_POST_ARG="$(SHEETY_API_POST)"'
+    - task: Docker@2
+      displayName: Push an image to DockerHub
+      inputs:
+        containerRegistry: 'crepic21-docker-hub'
+        repository: 'crepic21/hello-world-bsnodejs'
+        command: 'push'
+        Dockerfile: '**/Dockerfile'
+# Publish the K8C Files -> deployment.yaml file
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(System.DefaultWorkingDirectory)'
+        Contents: '**/*.yaml'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'manifest'
+        publishLocation: 'Container'
+
+# Stage 2
+# Download the K8S Files --> deployment.yaml file
+- stage: Deploy
+  displayName: Deploy image
+  jobs:
+  - job: Deploy
+    displayName: Deploy
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: DownloadPipelineArtifact@2
+      inputs:
+        buildType: 'current'
+        artifactName: 'manifest'
+        itemPattern: '**/*.yaml'
+        targetPath: '$(System.ArtifactsDirectory)'
+# Deploy to K8S Cluster with Docker image created
+    - task: KubernetesManifest@0
+      inputs:
+        action: 'deploy'
+        kubernetesServiceConnection: 'aws-kubernetes-cluster-service-connection'
+        namespace: 'default'
+        manifests: '$(System.ArtifactsDirectory)/configuration/kubernetes/deployment.yaml'
+        containers: 'crepic21/hello-world-bsnodejs:$(tag)'
+
