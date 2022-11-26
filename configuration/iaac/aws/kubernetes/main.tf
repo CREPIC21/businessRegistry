@@ -97,3 +97,5 @@ provider "aws" {
 # - deploying on AWS cluster not working as app can't connect to MongoDB Atlas database
 # - possible solution peering
 # -- https://cloud.mongodb.com/v2/6150399f555d3d674f00748d#security/network/peering
+# -- https://www.mongodb.com/docs/atlas/troubleshoot-connection/#attempting-to-connect-to-a-database-deployment-from-behind-a-firewall
+# -- https://stackoverflow.com/questions/56402472/kubernetes-node-js-container-cannot-connect-to-mongodb-atlas
