@@ -52,6 +52,7 @@ spec:
           initialDelaySeconds: 60
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
+      dnsPolicy: Default
 ---
 apiVersion: v1
 kind: Service
