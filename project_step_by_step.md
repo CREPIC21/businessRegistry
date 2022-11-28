@@ -489,8 +489,12 @@ GITHUB
 
 DEVOPS LEARNING
 - added GitHub action for automatic updates on the Linode server once I push changes from my local machine to GitHub
-- added Jenkins file for pipeline 
--- pipeline will build and push new image to DocketHub when new changes are committed to GitHub
+- added Jenkins file for pipeline:
+- pipeline will build and push new image to DocketHub when new changes are committed to GitHub
+
 - added two Azure DevOps pipelines
--- one for building and pushing new image to DocketHub when new changes are committed to GitHub
--- another one for provisioning Azure K8S using IAAC and Terraform 
+- one for building and pushing new image to DocketHub when new changes are committed to GitHub
+- another one for provisioning Azure K8S using IAAC and Terraform 
+
+- started on ansible playbook automated app deploy once server is provisioned using Terraform
+- GitHub repo: https://github.com/CREPIC21/businessregistry-ansible-playbook
