@@ -98,7 +98,7 @@ https://www.mongodb.com/products/compass
 - GeoJSON Location & Geocoder Hook - MapQuest API
   - https://www.npmjs.com/package/node-geocoder
   - installed geocoder -> npm install node-geocoder
-  - created an account on https://developer.mapquest.com/user/me/apps
+  - created an account on https://developer.mapquest.com/user/me/apps - crepic21
   - added geocoder provider and geocoder apy key to config.env
   - created new file geocoder.js in utils folder to create geocoder functionality and imported it to Trade.js models
   - created geocoder functionality which will once making a POST request, address parameter will go through geocoder and create a location field in DB with desired key/value pairs
