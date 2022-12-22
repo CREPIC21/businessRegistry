@@ -461,6 +461,7 @@ DONE ASSIGNMENTS AND FIXES
 - added links to footer for contact page and API docs page, as well added input and button for subscription - DONE
 - add logo to header - DONE
 - add functionality to subscribe button in footer, now when visitor subscribes, email is saved to google sheets using Sheety API - DONE
+- updated config.env values because of security reasons (see locally file config_vars_updated.md, not added to GitHub) - DONE
 
 UPDATING THE APP ON SERVER BY USING PULL
 - git pull https://github.com/CREPIC21/businessregistry.git
@@ -496,3 +497,7 @@ DEVOPS LEARNING
   - another one for provisioning Azure K8S using IAAC and Terraform 
 - started on ansible playbook automated app deploy once server is provisioned using Terraform
   - GitHub repo: https://github.com/CREPIC21/businessregistry-ansible-playbook
+
+  DEVOPS TODO
+  - as we have ansible playbook created for provisioning IaC(Terraform) and deploying the app on the created infrastructure we need to add SSL features and domain name so PayPal functionality will work as expected as it relies on HTTPS protocol or we can update redirect_urls in cart.js frontend controler according to server IP(which doesn't make sense), adding domain name would be much smarter choice
+  -- we can use ansible task to do it, selecting the file and replace the values with IP address or domain name

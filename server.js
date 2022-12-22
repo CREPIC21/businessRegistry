@@ -69,8 +69,6 @@ const addItemToCartBtn = require('./frontend_routes/utils/addItemToCart');
 const authFrontend = require('./frontend_routes/utils/auth');
 const subscribed = require('./frontend_routes/utils/subscribe');
 
-// const payPalRoute = require('./frontend_routes/pay');
-
 // Initialize the app
 const app = express();
 
@@ -158,9 +156,6 @@ app.use('/additem', addCartItem);
 app.use('/addToCart', addItemToCartBtn);
 app.use('/auth', authFrontend);
 app.use('/subscribed', subscribed);
-
-// app.use('/pay', payPalRoute);
-
 
 /* IMPORTANT */
 // to use middelware error.js in trades.js controller it has to be placed right here below "Mount routers", because middelware is executed in linear order
