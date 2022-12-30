@@ -501,3 +501,4 @@ DEVOPS LEARNING
   DEVOPS TODO
   - as we have ansible playbook created for provisioning IaC(Terraform) and deploying the app on the created infrastructure we need to add SSL features and domain name so PayPal functionality will work as expected as it relies on HTTPS protocol or we can update redirect_urls in cart.js frontend controler according to server IP(which doesn't make sense), adding domain name would be much smarter choice
   -- we can use ansible task to do it, selecting the file and replace the values with IP or domain name
+  -- FIXED -> using ansible task, selecting the file and replacing the PayPal redirect_urls with server IP
