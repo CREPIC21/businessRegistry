@@ -65,8 +65,8 @@ exports.pay = asyncHandler(async (req, res, next) => {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "https://businessregistry.xyz/cart/success",
-            "cancel_url": "https://businessregistry.xyz/cart/cancel"
+            "return_url": "https://bsdanman.azurewebsites.net/cart/success",
+            "cancel_url": "https://bsdanman.azurewebsites.net/cart/cancel"
         },
         "transactions": [{
             "item_list": {

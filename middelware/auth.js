@@ -24,7 +24,7 @@ exports.protect = asyncHandler(async (req, res, next) => {
 
     // Confirm that the token exists
     if(!token) {
-        return next(new ErrorResponse('Autorization needed to acces this route', 401));
+        return next(new ErrorResponse('Authorization needed to access this route', 401));
     }
 
     // Validate the token
