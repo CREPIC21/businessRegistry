@@ -114,7 +114,7 @@ app.use(xss());
 const limiter = rateLimit({
     // setup for 100 API calls in 10 minutes
     windowMs: 10 * 60 * 1000,
-    max: 100
+    max: 10000
 });
 app.use(limiter);
 
