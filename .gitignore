@@ -1,3 +1,8 @@
 node_modules/
 config/config.env
 config_vars_updated.md
+
+# aws IaC
+aws_terraform/keys
+aws_terraform/vm_infrastructure/.terraform*
+aws_terraform/vm_infrastructure/terraform.tfs*

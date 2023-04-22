@@ -1,0 +1,116 @@
+---
+ - hosts: dev
+   vars:
+     serveripaddress: "{{hostvars[inventory_hostname]['public_ip_address']}}"
+   become: yes
+   tasks:
+    - name: Update and upgrade apt packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 86400
+    - name: Install Node/NPM
+      ansible.builtin.shell: curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    - name: Install NodeJS
+      ansible.builtin.apt:
+        name: nodejs
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+    - name: Create a directory for project BS from GitHub
+      ansible.builtin.file:
+        path: /home/ubuntu/bs_application
+        state: directory
+    - name: Clone BS repo from GitHub
+      ansible.builtin.git:
+        repo: 'https://github.com/CREPIC21/businessregistry.git'
+        dest: /home/ubuntu/bs_application
+        clone: yes
+    - name: Copy config.env file with owner and permissions
+      copy:
+        src: /home/danijel/ansible_bs/config.env
+        dest: /home/ubuntu/bs_application/config/config.env
+        owner: root
+        group: root
+        mode: '0644'
+    - name: Replace the domain in cart.js configuration file with server IP address for PayPal functionality
+      replace:
+        path: /home/ubuntu/bs_application/frontend_controllers/cart.js
+        regexp: "https://businessregistry.xyz"
+        replace: "http://{{ serveripaddress }}"
+    - name: Install dependencies
+      npm:
+        path: /home/ubuntu/bs_application/package
+    - name: Setup PM2 process manager to keep the app running
+      npm:
+        name: pm2
+        global: yes
+    - name: Start the app
+      command: pm2 start server.js
+      args:
+        chdir: /home/ubuntu/bs_application
+    - name: Make sure app starts when reboot
+      command: pm2 startup ubuntu
+    - name: Rename and move original nginx configuration file
+      command: "mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.ORIG"
+    - name: Create a new nginx configuration file from template
+      copy:
+        src: /home/danijel/ansible_bs/nginx_setup.txt
+        dest: /etc/nginx/sites-available/default
+    - name: Replace the domain in nginx configuration file with server IP address
+      replace:
+        path: /etc/nginx/sites-available/default
+        regexp: "domain_name www_domain_name"
+        replace: "{{ serveripaddress }}"
+    - name: Restart nginx
+      command: service nginx restart
+
+      
+
+
+
+        
+
+# EXECUTE
+# -- ansible-playbook playbooks/01-deply-bs-on-ec2.yml
+
+### TASKS ###
+# 1. Apt Update
+# 2. Apt Upgrade
+# -- https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
+# 3. Install Node/NPM with curl
+# -- https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html
+# 4. Install NodeJS
+# 5. Install nginx
+# -- https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
+# 6. Create a directory for project BS from GitHub
+# -- https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html
+# 7. Clone BS repo from GitHub
+# -- https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html
+# 8. Copy file with owner and permissions
+# -- https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html
+# 9. Install dependencies
+# 10. Setup PM2 process manager to keep your app running
+# -- https://docs.ansible.com/ansible/2.9/modules/npm_module.html
+# 11. Start the app
+# 12. Make sure app starts when reboot
+# -- https://docs.ansible.com/ansible/latest/collections/ansible/builtin/command_module.html
+# 13. Rename and move original nginx configuration file
+# -- https://phoenixnap.com/kb/ansible-create-file
+# -- https://www.middlewareinventory.com/blog/ansible-lineinfile-examples/
+# -- http://www.freekb.net/Article?id=490#:~:text=Ansible%20does%20not%20have%20a%20module%20that%20can,stat%20module%20to%20determine%20if%20the%20file%20exists.
+# 14. Create a new nginx configuration file from template
+# -- https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html
+# 15. Replace the domain in nginx configuration file with server IP address
+# -- https://www.linuxtechi.com/replace-strings-lines-with-ansible/
+# 16. Setup ufw firewall, check nginx config and restart nginx - TO BE DONE
+# -- NO NEED FOR THIS STEP AS AWS PROVIDES SECURITY GROUPS, IT CAN BE ADDED AS ADDITIONAL LAYER OF SECURITY
+# -- https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html
+# -- https://serverfault.com/questions/1067702/is-it-worth-installing-ufw-on-an-aws-ec2-instance
+# 17. Restart nginx
+# -- https://docs.ansible.com/ansible/latest/collections/ansible/builtin/command_module.html
+
+## TODO ##
+# - in step 15 add IP address dynamically using ansible variables, for now I need to change the IP manually every time new VM is provisioned
+# -- https://stackoverflow.com/questions/71795614/ansible-take-some-variable-values-from-one-host-and-use-them-in-another-host
+# -- DONE -- #

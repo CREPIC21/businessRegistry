@@ -1,0 +1,16 @@
+---
+- hosts: all
+  tasks:
+    - name: Ping All Servers
+      action: ping
+    - debug: msg="Hello"
+- hosts: dev
+  tasks:
+    - name: Ping Dev Servers
+      action: ping
+    - debug: msg="Hello Dev"
+
+# EXECUTE
+# -- ansible-playbook playbooks/00-ping.yml
+# -- ansible-playbook -l qa playbooks/00-ping.yml
+# -- ansible-playbook -l dev playbooks/00-ping.yml
