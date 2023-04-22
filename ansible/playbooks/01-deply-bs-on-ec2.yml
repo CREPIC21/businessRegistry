@@ -1,5 +1,5 @@
 ---
- - hosts: dev
+ - hosts: all
    vars:
      serveripaddress: "{{hostvars[inventory_hostname]['public_ip_address']}}"
    become: yes
@@ -28,7 +28,7 @@
         clone: yes
     - name: Copy config.env file with owner and permissions
       copy:
-        src: /home/danijel/ansible_bs/config.env
+        src: /home/danijel/Desktop/test_bs/businessregistry/config/config.env
         dest: /home/ubuntu/bs_application/config/config.env
         owner: root
         group: root
@@ -55,7 +55,7 @@
       command: "mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.ORIG"
     - name: Create a new nginx configuration file from template
       copy:
-        src: /home/danijel/ansible_bs/nginx_setup.txt
+        src: /home/danijel/Desktop/test_bs/businessregistry/ansible/nginx_setup.txt
         dest: /etc/nginx/sites-available/default
     - name: Replace the domain in nginx configuration file with server IP address
       replace:
