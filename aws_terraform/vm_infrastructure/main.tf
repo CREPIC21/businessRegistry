@@ -5,6 +5,14 @@ terraform {
       version = "~> 4.0"
     }
   }
+  # # remote state on Terraform Cloud
+  #   cloud {
+  #   # info from created account on https://app.terraform.io/ 
+  #   organization = "marko21org"  # should already exist on Terraform cloud
+  #   workspaces {
+  #     name = "BS-Production"
+  #   }
+  # }
 }
 
 # Configure the AWS Provider
@@ -117,6 +125,11 @@ resource "aws_instance" "my_vm" {
     "Name" = var.my_vm_name
   }
 }
+
+### STEPS FOR SUCCESSFULL CONFIGURATION REGARDING REMOTE STATE ON TERRAFORM CLOUD###
+# - first run: "terraform login" and follow instructions regarding Terraform Cloud initialization
+# - second run: "terraform init"
+# terraform state will be saved on the Terraform Cloud
 
 ### IMPORTANT ###
 /*
