@@ -113,14 +113,14 @@ data "aws_ami" "latest_amazon_linux2" {
 
 # Create EC2 instance
 resource "aws_instance" "my_vm" {
-  #   ami                         = "ami-06616b7884ac98cdd"
-  ami                         = data.aws_ami.latest_amazon_linux2.id
+    ami                         = "ami-0d497a49e7d359666"
+  # ami                         = data.aws_ami.latest_amazon_linux2.id
   instance_type               = var.vm_instance_type
   subnet_id                   = aws_subnet.web.id                                 # mapping to the our created subnet so the EC2 will be launched in that subnet and not in the default one
   vpc_security_group_ids      = [aws_default_security_group.default_sec_group.id] # mapping to the our created security group
   associate_public_ip_address = true                                              # public IP that is required to access the EC2 from the internet
   # key_name                    = "production_ssh_key"                            # telling AWS to use specific key-pair to authenticate the access to the EC2
-  key_name  = aws_key_pair.test_ssh_key.key_name
+  key_name = aws_key_pair.test_ssh_key.key_name
   tags = {
     "Name" = var.my_vm_name
   }
