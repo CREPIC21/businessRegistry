@@ -5,14 +5,14 @@ terraform {
       version = "~> 4.0"
     }
   }
-  # # remote state on Terraform Cloud
-  #   cloud {
-  #   # info from created account on https://app.terraform.io/ 
-  #   organization = "marko21org"  # should already exist on Terraform cloud
-  #   workspaces {
-  #     name = "BS-Production"
-  #   }
-  # }
+  # remote state on Terraform Cloud
+  cloud {
+    # info from created account on https://app.terraform.io/ 
+    organization = "marko21org" # should already exist on Terraform cloud
+    workspaces {
+      name = "BS-Production"
+    }
+  }
 }
 
 # Configure the AWS Provider
@@ -92,8 +92,9 @@ resource "aws_default_security_group" "default_sec_group" {
 
 # Create a key-pair resource that will be used to control login access to EC2 instance, giving the path to the public key
 resource "aws_key_pair" "test_ssh_key" {
-  key_name   = var.test_ssh_key_name
-  public_key = file(var.ssh_public_key)
+  key_name   = var.test_ssh_key_name 
+  # public_key = file(var.ssh_public_key)             # when using remote state on AWS
+  public_key = file("${path.module}/keys/test_rsa.pub")    # when using remote state on Terraform Cloud
 }
 
 # Create data source resource to get EC2 ami dynamically fetched from the provider
@@ -113,7 +114,7 @@ data "aws_ami" "latest_amazon_linux2" {
 
 # Create EC2 instance
 resource "aws_instance" "my_vm" {
-    ami                         = "ami-0d497a49e7d359666"
+  ami = "ami-0d497a49e7d359666"
   # ami                         = data.aws_ami.latest_amazon_linux2.id
   instance_type               = var.vm_instance_type
   subnet_id                   = aws_subnet.web.id                                 # mapping to the our created subnet so the EC2 will be launched in that subnet and not in the default one

@@ -6,3 +6,4 @@ config_vars_updated.md
 aws_terraform/keys
 aws_terraform/vm_infrastructure/.terraform*
 aws_terraform/vm_infrastructure/terraform.tfs*
+aws_terraform/vm_infrastructure/keys
