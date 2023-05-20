@@ -7,3 +7,7 @@ aws_terraform/keys
 aws_terraform/vm_infrastructure/.terraform*
 aws_terraform/vm_infrastructure/terraform.tfs*
 aws_terraform/vm_infrastructure/keys
+aws_terraform/eks_infrastructure/.terraform*
+aws_terraform/eks_infrastructure/terraform.tfs*
+aws_terraform/eks_infrastructure/keys
+
