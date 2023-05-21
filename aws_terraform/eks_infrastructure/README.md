@@ -10,7 +10,7 @@
 3. Pull and deploy the image on to the cluster using deployment.yaml file
 `kubectl apply -f deployment.yaml`
 
-4. DevOps CI/CD pipeline
+4. DevOps CI/CD pipeline - Service Connection
 - https://learn.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml#service-account-option
 
 # Kubernetes Cluster Commands
