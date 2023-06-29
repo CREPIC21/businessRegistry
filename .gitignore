@@ -11,3 +11,6 @@ aws_terraform/eks_infrastructure/.terraform*
 aws_terraform/eks_infrastructure/terraform.tfs*
 aws_terraform/eks_infrastructure/keys
 
+# azure IaC
+azure_terraform
+azure_terraform/keys
