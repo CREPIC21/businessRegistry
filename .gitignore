@@ -13,6 +13,12 @@ aws_terraform/eks_infrastructure/keys
 
 # azure IaC
 azure_terraform/keys
-azure_terraform/.auto.tfvars
-azure_terraform/.terraform*
-azure_terraform/terraform.tfs*
+azure_terraform/TODO.md
+## 01_WebApp_Deployment
+azure_terraform/01_WebApp_Deployment/.auto.tfvars
+azure_terraform/01_WebApp_Deployment/.terraform*
+azure_terraform/01_WebApp_Deployment/terraform.tfs*
+## 01_WebApp_Deployment
+azure_terraform/02_WebApp_AzTrafficManager_Deployment/.auto.tfvars
+azure_terraform/02_WebApp_AzTrafficManager_Deployment/.terraform*
+azure_terraform/02_WebApp_AzTrafficManager_Deployment/terraform.tfs*

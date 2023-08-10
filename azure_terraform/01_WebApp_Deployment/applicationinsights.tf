@@ -5,6 +5,7 @@ resource "azurerm_log_analytics_workspace" "bsworkspace" {
   resource_group_name = var.resource_group_name
   sku                 = var.log_analytics_workspace_sku
   retention_in_days   = var.log_analytics_workspace_retention_in_days
+  depends_on          = [azurerm_resource_group.appgrp]
 }
 
 # Now we can create application insights resource which is linked to central log analytics workspace
