@@ -1,6 +1,6 @@
 # Creating additional Web App Deployment Slot
 resource "azurerm_linux_web_app_slot" "web_app_slot_01" {
-  name           = "bs01app-prod-slot"
+  name           = "${azurerm_linux_web_app.bs01app.name}-prod-slot"
   app_service_id = azurerm_linux_web_app.bs01app.id
 
   site_config {
@@ -19,7 +19,7 @@ resource "azurerm_linux_web_app_slot" "web_app_slot_01" {
 
 # Creating additional Web App Deployment Slot
 resource "azurerm_linux_web_app_slot" "web_app_slot" {
-  name           = "bs02app-prod-slot"
+  name           = "${azurerm_linux_web_app.bs02app.name}-prod-slot"
   app_service_id = azurerm_linux_web_app.bs02app.id
 
   site_config {

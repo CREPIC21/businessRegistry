@@ -8,6 +8,18 @@ variable "location" {
   default = "North Europe"
 }
 
+variable "locations" {
+  type = list(any)
+  default = [
+    {
+      northEuropeLocation = "North Europe"
+    },
+    {
+      usLocation = "East US"
+    }
+  ]
+}
+
 variable "virtual_network" {
   type = map(any)
   default = {
@@ -302,4 +314,10 @@ variable "PAY_PAL_CLIENT_SECRET" {
 
 variable "SHEETY_API_POST" {
   type = string
+}
+
+variable "number_of_virtual_machines" {
+  type    = number
+  default = 2
+
 }

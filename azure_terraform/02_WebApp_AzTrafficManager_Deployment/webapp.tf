@@ -68,7 +68,7 @@ resource "azurerm_app_service_source_control" "bs_source_control_01" {
 resource "azurerm_service_plan" "bs02appplan" {
   name                = "bs02appplan"
   resource_group_name = var.resource_group_name
-  location            = "EAST US"
+  location            = "East US"
   os_type             = var.webappplan_os_type
   sku_name            = var.webappplan_sku_name
   depends_on          = [azurerm_resource_group.appgrp]

@@ -1,6 +1,6 @@
 # First we need to create central log analytics workspace
 resource "azurerm_log_analytics_workspace" "bsworkspace01" {
-  name                = "${var.webapp_name}-workspace666652"
+  name                = "${var.webapp_name}-bsworkspace01"
   location            = var.location
   resource_group_name = var.resource_group_name
   sku                 = var.log_analytics_workspace_sku
@@ -10,7 +10,7 @@ resource "azurerm_log_analytics_workspace" "bsworkspace01" {
 
 # Now we can create application insights resource which is linked to central log analytics workspace
 resource "azurerm_application_insights" "bsappinsights01" {
-  name                = "${var.webapp_name}-appinsights01"
+  name                = "${var.webapp_name}-bsappinsights01"
   location            = var.location
   resource_group_name = var.resource_group_name
   application_type    = var.application_insights_application_type
@@ -21,7 +21,7 @@ resource "azurerm_application_insights" "bsappinsights01" {
 ###############################################################################################################
 # First we need to create central log analytics workspace
 resource "azurerm_log_analytics_workspace" "bsworkspace02" {
-  name                = "${var.webapp_name}-workspace777652"
+  name                = "${var.webapp_name}-bsworkspace02"
   location            = var.location
   resource_group_name = var.resource_group_name
   sku                 = var.log_analytics_workspace_sku
@@ -31,7 +31,7 @@ resource "azurerm_log_analytics_workspace" "bsworkspace02" {
 
 # Now we can create application insights resource which is linked to central log analytics workspace
 resource "azurerm_application_insights" "bsappinsights02" {
-  name                = "${var.webapp_name}-appinsights02"
+  name                = "${var.webapp_name}-bsappinsights02"
   location            = var.location
   resource_group_name = var.resource_group_name
   application_type    = var.application_insights_application_type
