@@ -1,3 +1,13 @@
+/*
+
+Dcumentation:
+
+1. azurerm_linux_web_app_slot - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_web_app_slot
+
+2. azurerm_web_app_active_slot - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/web_app_active_slot
+
+*/
+
 # Creating additional Web App Deployment Slot
 resource "azurerm_linux_web_app_slot" "web_app_slot_01" {
   name           = "${azurerm_linux_web_app.bs01app.name}-prod-slot"

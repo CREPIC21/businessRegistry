@@ -1,3 +1,15 @@
+/*
+
+Dcumentation:
+
+1. azurerm_traffic_manager_profile - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/traffic_manager_profile
+
+2. azurerm_traffic_manager_azure_endpoint - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/traffic_manager_azure_endpoint
+
+3. 
+
+*/
+
 resource "azurerm_traffic_manager_profile" "bs-profile" {
   name                   = "bs-profile-100"
   resource_group_name    = var.resource_group_name

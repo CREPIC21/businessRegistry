@@ -1,3 +1,15 @@
+/*
+
+Dcumentation:
+
+1. azurerm_service_plan - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/service_plan
+
+2. azurerm_linux_web_app - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_web_app
+
+3. azurerm_app_service_source_control - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service_source_control
+
+*/
+
 # Creating App Service Plan For First Web App
 resource "azurerm_service_plan" "bs01appplan" {
   name                = "bs01appplan"

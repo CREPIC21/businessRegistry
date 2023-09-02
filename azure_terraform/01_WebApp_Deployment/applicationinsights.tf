@@ -1,3 +1,13 @@
+/*
+
+Dcumentation:
+
+1. azurerm_log_analytics_workspace - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_workspace
+
+2. azurerm_application_insights - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/application_insights
+
+*/
+
 # First we need to create central log analytics workspace
 resource "azurerm_log_analytics_workspace" "bsworkspace" {
   name                = "${var.webapp_name}-workspace726652"
